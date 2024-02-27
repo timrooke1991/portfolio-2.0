@@ -1,3 +1,7 @@
+<script>
+	import '$lib/assets/scss/global.scss';
+</script>
+
 <header>
 	<a href="/">Tim Rooke</a>
 
@@ -8,16 +12,15 @@
 	</nav>
 </header>
 
-<slot></slot>
-
+<slot />
 
 <style>
-    header {
+	/* Nav */
+	header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1.25rem;
-		background: var(--yellow);
+		padding: 2.5rem 5em;
 	}
 
 	nav {
@@ -25,12 +28,15 @@
 		gap: 1.5em;
 	}
 
+	/* Nav Link Item */
+
 	nav a {
 		display: inline-flex;
 		text-decoration: none;
 		margin: 0;
+		font-size: 1.25em;
 		position: relative;
-		color: var(--white-ink);
+		color: var(--yellow);
 		width: max-content;
 		transition: color 0.15s;
 	}
@@ -41,15 +47,15 @@
 		left: 0;
 		content: '';
 		transform: scaleX(0);
+		transform-origin: left; /* Set the transform origin to 'left' */
 		display: block;
 		width: 100%;
 		height: 0.1em;
-		background: yellow;
+		background: var(--yellow);
 		transition: transform 0.1s cubic-bezier(0.5, 0, 0.5, 1);
 	}
 
 	nav a:hover span::after {
 		transform: scaleX(1);
-		transform-origin: left;
 	}
 </style>

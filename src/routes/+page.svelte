@@ -1,4 +1,3 @@
-
 <main>
 	<div class="graph-container">
 		<svg class="elevation-graph" viewBox="0 0 1000 100" preserveAspectRatio="none">
@@ -23,7 +22,9 @@
 			/>
 		</svg>
 	</div>
-	<span># Welcome</span>
+	<span class="angle-bracket-one">[</span>
+	<div class="angle-bracket-content">Welcome</div>
+	<span>]</span>
 	<h1>Hello, you've found my portfolio!</h1>
 	<h2>I am based in Bournemouth, and work for Legl as a Software Engineer</h2>
 	<p>
@@ -60,7 +61,7 @@
 	}
 
 	#tracingBeam {
-		animation: trace 60s linear forwards;
+		animation: trace 2s linear forwards;
 	}
 
 	@keyframes trace {
@@ -70,14 +71,36 @@
 	}
 
 	:global(body) {
-		background: #091523;
+		background: #020711;
 		color: white;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-family: 'Averta-Std';
 		margin: 0;
 	}
 
 	/* Header component */
-	
 
 	/* Page body  */
+
+	.angle-bracket-one {
+		font-family: var(--headingFont);
+		font-weight: 400;
+		font-size: 1.25em;
+		color: var(--lightGray);
+		margin: 0 0.1em 0 0;
+		z-index: 2;
+		position: relative;
+		left: -1px;
+	}
+
+	.angle-bracket-content {
+		position: relative;
+		z-index: 1;
+		background: linear-gradient(90deg, #a7a8aa, #92abb2, #5eca78, #b6ec1f, #ffd100);
+		background-clip: text;
+		font-family: var(--headingFont);
+		text-transform: lowercase;
+		flex: 0 1 auto;
+		white-space: nowrap;
+		line-height: 1.2;
+	}
 </style>

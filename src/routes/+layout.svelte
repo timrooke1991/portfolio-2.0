@@ -1,10 +1,11 @@
 <script>
-	import '$lib/assets/scss/global.scss';
+    import '$lib/assets/scss/global.scss';
 </script>
 
 <header>
-	<a href="/">Tim Rooke</a>
-
+	<a href="/">
+		/* Tim Rooke */
+	</a>
 	<nav>
 		<a href="/about"><span>About</span></a>
 		<a href="/blog"><span>Blog</span></a>
@@ -12,7 +13,9 @@
 	</nav>
 </header>
 
-<slot />
+<main>
+	<slot></slot>
+</main>
 
 <style>
 	/* Nav */
@@ -20,7 +23,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 2.5rem 5em;
+		padding: var(--quarterNote);
 	}
 
 	nav {
@@ -36,7 +39,7 @@
 		margin: 0;
 		font-size: 1.25em;
 		position: relative;
-		color: var(--yellow);
+		color: var(--white);
 		width: max-content;
 		transition: color 0.15s;
 	}

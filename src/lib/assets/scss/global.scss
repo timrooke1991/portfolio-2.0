@@ -68,7 +68,7 @@ body::before {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-image: url('./src/lib/assets/img/background.jpg');
+	background-image: url('/src/lib/assets/img/background.jpg');
 	background-size: cover;
 	filter: grayscale(100%);
 }

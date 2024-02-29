@@ -1,19 +1,29 @@
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import adapter from '@sveltejs/adapter-auto';
-import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-static';
+import sveltePreprocess from 'svelte-preprocess';
+import { mdsvex } from 'mdsvex';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import autoprefixer from 'autoprefixer';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	extensions: ['.svelte', '.md'],
 	preprocess: [
-		preprocess({
-			scss: {
-				prependData: `@import './src/lib/assets/scss/global.scss';`
+		sveltePreprocess({
+			postcss: {
+				plugins: [autoprefixer]
 			}
 		}),
-		vitePreprocess({})
+		mdsvex({
+			extensions: ['.md'],
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+		})
 	],
 	kit: {
-		adapter: adapter(),
+		adapter: adapter()
+	},
+	compilerOptions: {
+		runes: true
 	}
 };
 

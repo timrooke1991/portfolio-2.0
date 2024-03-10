@@ -1,17 +1,30 @@
 <script>
     import '$lib/assets/scss/global.scss';
+	import { page } from '$app/stores';
+
 	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';	
-	import { fade } from 'svelte/transition';
-	 let { data } = $props();
+	import Footer from '$lib/components/Footer.svelte';
+	import PageTransition from '$lib/transitions/PageTransition.svelte'
+	import SubHeader from '$lib/components/SubHeader.svelte'	
+
+	const isSinglePostCheck = new RegExp(/\/blog\/[A-z0-9\-_]+\/?$/)
+	const initialValue = isSinglePostCheck.test($page.data.currentRoute);
+    let isSinglePost = $state(initialValue);
+
+    $effect(() => {
+		console.log("isSinglePost", isSinglePost)	
+        isSinglePost = isSinglePostCheck.test($page.data.currentRoute);
+    });
 </script>
 
 <Header />
-
-{#key data.currentRoute}
-	<main in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
-		<slot />
+	<main>
+		<SubHeader title={$page.data.currentRoute} {isSinglePost} />
+		<PageTransition refresh={$page.data.currentRoute}>
+			<slot />
+		</PageTransition>
 	</main>
-{/key}
+	
 <Footer />
-
+<style lang="scss">
+</style>

@@ -40,7 +40,7 @@ $xxxl: 122rem;
 	--headingFont: 'Averta-Std', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		'Helvetica Neue', Arial, sans-serif;
 	--bodyFont: 'Alkes', Georgia, serif;
-	--codeFont: 'MonoLisa', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	--codeFont: 'Space Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
 	--bodyFontWeight: normal;
 	--bodyLineHeight: 1.55;
@@ -54,8 +54,8 @@ $xxxl: 122rem;
 		--bodyFontSize: 1.25rem;
 	}
 
-	--grey: #1D1F20;
-	--yellow: #efc371;
+	--grey: #1d1f20;
+	--greyLight: #adadad;
 	--purple: #ae94c0;
 	--green: #b5bc67;
 	--orange: #dd925f;
@@ -115,7 +115,6 @@ $xxxl: 122rem;
 	@media (min-width: $xxxl) {
 		--margin: var(--dottedWholeNote);
 	}
-	
 
 	font-size: var(--bodyFontSize);
 }

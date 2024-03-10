@@ -54,9 +54,12 @@ main:focus {
 body {
 	background: var(--grey);
 	font-family: var(--bodyFont);
-	color: var(--paper);
+	color: var(--ink);
 	margin: 0;
 	padding: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 body::before {
@@ -81,6 +84,21 @@ body {
 
 main {
 	padding: var(--margin);
+	flex: 1;
+}
+
+a {
+	color: var(--greyLight);
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
+
+	&.primary {
+		color: var(--ink);
+	}
+
+	&:hover {
+		color: var(--purple);
+	}
 }
 
 h1,
@@ -102,4 +120,51 @@ h6 {
 	li::marker {
 		content: none !important;
 	}
+}
+
+@for $i from 1 through 8 {
+	main section *:nth-child(#{$i}) {
+		animation-delay: 0.2 + ($i * 0.18s);
+	}
+
+	main section nav a:nth-child(#{$i}) {
+		animation-delay: 0.75 + ($i * 0.12s);
+	}
+}
+
+main section > *,
+main section nav a {
+	opacity: 0;
+	transform: translateY(16px);
+	animation: fade_in_intro 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes fade_in_intro {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.page-container-center {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	max-width: var(--maxWidth);
+	margin: auto;
+}
+h1.page-title {
+	font-size: clamp(1.2rem, 0.6rem + 2vw, 1.8rem);
+	margin-top: var(--quarterNote);
+	font-family: var(--headingFont);
+	margin-bottom: var(--quarterNote);
+	color: var(--ink);
+	line-height: 1.4;
+	max-width: 23em;
+}
+
+.title-accent {
+	margin-left: calc(calc(var(--quarterNote) + 4px) * -1);
+	border-left: 4px solid var(--yellow);
+	padding-left: var(--quarterNote);
 }

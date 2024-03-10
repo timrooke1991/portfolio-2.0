@@ -5,7 +5,8 @@
 <style>
 	footer {
 		display: flex;
-		color: var(--ink);
+		color: var(--greyLight);
+		font-size: 0.75em;
 		justify-content: center;
 		align-items: center;
 	}

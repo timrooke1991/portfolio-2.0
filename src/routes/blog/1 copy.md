@@ -5,8 +5,6 @@ title: "GCD, Euclid and Efficient Algorithms"
 template: "post"
 draft: false
 preview: "This is a continuation of the my series on algorithms — see previous post to catch up where we looked at scrambled eggs and algorithm basics. This is a short introduction to algorithms, why they are…"
-category: [Algorithms,Coding,Web Development,Programming,Computing Science]
-tags: [Algorithms,Coding,Web Development,Programming,Computing Science]
 ---
 
 ### GCD, Euclid and Efficient Algorithms

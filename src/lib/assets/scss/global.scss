@@ -169,6 +169,10 @@ h1.page-title {
 	border-left: 4px solid var(--yellow);
 	padding-left: var(--quarterNote);
 
+	&.secondary {
+		border-color: var(--purple);
+	}
+
 	@media (max-width: 768px) {
 		margin-left: 0;
 	}

@@ -1,4 +1,3 @@
-
 export const fetchMarkdownPosts = async () => {
 	const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
@@ -41,4 +40,25 @@ export function formatDate(dateStr) {
 	const formatter = new Intl.DateTimeFormat('en', options);
 
 	return formatter.format(date);
+}
+
+export function getRelatedPosts(currentTheme, allPosts, currentTitle) {
+	console.log('currentTheme:', currentTheme);
+	console.log('allPosts:', allPosts);
+	console.log('currentTitle:', currentTitle);
+	let filteredPosts = allPosts.filter((post) => post?.meta.title !== currentTitle);
+
+	if (currentTheme) {
+		let themeRelatedPosts = filteredPosts.filter((post) => post?.meta.theme === currentTheme);
+		if (themeRelatedPosts.length >= 3) {
+			return themeRelatedPosts.slice(0, 3); // Return the first 3 posts with the same theme
+		}
+	}
+
+	// If there's no theme or not enough theme-related posts, return the 3 most recent posts
+	return filteredPosts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date)).slice(0, 3);
+}
+
+export function capitalize(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
 }

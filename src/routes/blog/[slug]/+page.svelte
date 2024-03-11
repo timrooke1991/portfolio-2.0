@@ -1,14 +1,22 @@
 <!-- src/routes/[slug]/+page.svelte -->
 <script>
 	import { onMount } from 'svelte';
+	import { fetchMarkdownPosts, getRelatedPosts } from '$lib/utils';
+	import Categories from '../../../lib/components/Categories.svelte';
+	import RelatedPosts from '../../../lib/components/RelatedPosts..svelte';
 
 	let { data } = $props();
 	let readingTime = $state(1);
-
+	let relatedPosts = $state([]);
 	onMount(() => {
 		const words = 500; // data?.content.trim().split(/\s+/).length;
 		const wordsPerMinute = 225; // Average reading speed
 		readingTime = Math.max(1, Math.ceil(words / wordsPerMinute));
+	});
+
+	$effect(async () => {
+		const allPostsMetadata = await fetchMarkdownPosts();
+		relatedPosts = getRelatedPosts(data.theme, allPostsMetadata, data.title);
 	});
 </script>
 
@@ -17,36 +25,27 @@
 	<meta property="og:title" content={data.title} />
 </svelte:head>
 
-<article class="page-container-center">
-	<div class="header title-accent">
-		<h1>{data.title}</h1>
-		<p class="meta">
-			<span class="date">{data?.date}</span>
-			<span class="time">{readingTime} min read</span>
-		</p>
-	</div>
-
-	<svelte:component this={data.content} />
-
-	{#if data.categories?.length}
-		<aside>
-			<ul class="no-bullets title-accent">
-				{#each data.categories as category, index}
-					{#if index !== 0}
-						<span class="separator"></span>
-					{/if}
-					<li><a href="categories/{category}">{category}</a></li>
-				{/each}
-			</ul>
-		</aside>
+<section class="page-container-center">
+	<article>
+		<div class="header title-accent">
+			<h1>{data.title}</h1>
+			<p class="meta">
+				<span class="date">{data?.date}</span>
+				<span class="time">{readingTime} min read</span>
+			</p>
+		</div>
+		<Categories categories={data.categories} />
+		<svelte:component this={data.content} />
+	</article>
+	{#if relatedPosts.length}
+		<RelatedPosts {relatedPosts} theme={data?.theme} />
 	{/if}
-</article>
+</section>
 
 <style lang="scss">
 	article {
 		display: flex;
 		flex-direction: column;
-		margin: auto;
 		max-width: 38em;
 		color: var(--ink);
 	}
@@ -84,26 +83,6 @@
 		span.time {
 			font-size: 0.85em;
 			color: var(--purple);
-		}
-	}
-
-	.separator::before {
-		content: '•';
-		color: var(--yellow);
-		padding: 0 8px;
-		font-size: 24px;
-		vertical-align: middle;
-	}
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.5em;
-		margin-top: var(--halfNote);
-
-		li {
-			text-decoration: none;
-			color: inherit;
 		}
 	}
 </style>

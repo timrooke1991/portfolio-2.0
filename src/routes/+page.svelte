@@ -11,11 +11,11 @@
 			name: 'Blog',
 			label: 'Mad ramblings'
 		},
-		{
-			href: '/projects',
-			name: 'Projects',
-			label: 'Stuff that I have built'
-		},
+		// {
+		// 	href: '/projects',
+		// 	name: 'Projects',
+		// 	label: 'Stuff that I have built'
+		// },
 		{
 			href: '/contact',
 			name: 'Contact',
@@ -23,6 +23,11 @@
 		}
 	];
 </script>
+
+<svelte:head>
+	<title>Tim Rooke | My portfolio</title>
+	<meta property="og:title" content="Home" />
+</svelte:head>
 <section>
 	<h1><span class="highlight">Hey!</span> <span class="underline">You've found my portfolio</span>!<br> I'm a software engineer, marathon runner and aspiring chef.</h1>
 	<p class="subheading">I am based in Bournemouth, and work for Legl as a Software Engineer</p>

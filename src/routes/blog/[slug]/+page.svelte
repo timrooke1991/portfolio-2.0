@@ -6,8 +6,7 @@
 	let readingTime = $state(1);
 
 	onMount(() => {
-        console.log("data", data?.content);
-		const words = 500 // data?.content.trim().split(/\s+/).length;
+		const words = 500; // data?.content.trim().split(/\s+/).length;
 		const wordsPerMinute = 225; // Average reading speed
 		readingTime = Math.max(1, Math.ceil(words / wordsPerMinute));
 	});
@@ -98,6 +97,7 @@
 	ul {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
 		gap: 0.5em;
 		margin-top: var(--halfNote);
 

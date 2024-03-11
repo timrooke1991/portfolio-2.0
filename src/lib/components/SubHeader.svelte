@@ -54,7 +54,6 @@
 		--transition: transform 0.24s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 		background: transparent;
-		margin-bottom: var(--halfNote);
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;

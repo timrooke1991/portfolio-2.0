@@ -3,14 +3,16 @@
 	let { posts, title, useBorder } = $props();
 </script>
 
-<h2 class="month-title">
-	{title ?? 'more posts'}
-</h2>
-<div class="posts-container" class:no-border={!useBorder}>
-	{#each posts as post}
-		<PostList {post} />
-	{/each}
-</div>
+{#if posts.length > 0}
+	<h2 class="month-title">
+		{title ?? 'more posts'}
+	</h2>
+	<div class="posts-container" class:no-border={!useBorder}>
+		{#each posts as post}
+			<PostList {post} />
+		{/each}
+	</div>
+{/if}
 
 <style lang="scss">
 	.posts-container {

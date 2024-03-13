@@ -6,7 +6,7 @@
 	<aside class="categories">
 		<ul class="no-bullets">
 			{#each categories as category}
-				<li><a href="category/{category}">{category}</a></li>
+				<li><a href="/blog/category/{category}">{category}</a></li>
 			{/each}
 		</ul>
 	</aside>

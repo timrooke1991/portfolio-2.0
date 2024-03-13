@@ -6,6 +6,7 @@ export const fetchMarkdownPosts = async () => {
 		iterablePostFiles.map(async ([path, resolver]) => {
 			const { metadata } = await resolver();
 			const postPath = path.slice(11, -3);
+			console.log('metadata', metadata);
 			return {
 				meta: {
 					...metadata,
@@ -21,6 +22,7 @@ export const fetchMarkdownPosts = async () => {
 };
 
 export function formatDate(dateStr) {
+	console.log('dateStr', dateStr);
 	const dateParts = dateStr.split('-');
 	const year = dateParts[0];
 	const month = dateParts[1] - 1; // Month is 0-indexed in JavaScript Date

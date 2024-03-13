@@ -8,14 +8,7 @@
 	import BackButton from '../../../lib/components/BackButton.svelte';
 
 	let { data } = $props();
-	let readingTime = $state(1);
 	let relatedPosts = $state([]);
-	onMount(() => {
-		const words = 500; // data?.content.trim().split(/\s+/).length;
-		const wordsPerMinute = 225; // Average reading speed
-		readingTime = Math.max(1, Math.ceil(words / wordsPerMinute));
-	});
-
 	$effect(async () => {
 		const allPostsMetadata = await fetchMarkdownPosts();
 		relatedPosts = getRelatedPosts(data.theme, allPostsMetadata, data.title);
@@ -34,7 +27,7 @@
 			<h1>{data.title}</h1>
 			<p class="meta">
 				<span class="date">{data?.date}</span>
-				<span class="time">{readingTime} min read</span>
+				<span class="time">{data?.readingTime ?? 3} min read</span>
 			</p>
 		</div>
 		<Categories categories={data.categories} />

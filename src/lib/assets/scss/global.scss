@@ -123,15 +123,15 @@ h6 {
 	}
 }
 
-@for $i from 1 through 8 {
-	main section *:nth-child(#{$i}) {
-		animation-delay: 0.2 + ($i * 0.18s);
-	}
+// @for $i from 1 through 8 {
+// 	main section *:nth-child(#{$i}) {
+// 		animation-delay: 0.2 + ($i * 0.18s);
+// 	}
 
-	main section nav a:nth-child(#{$i}) {
-		animation-delay: 0.75 + ($i * 0.12s);
-	}
-}
+// 	main section nav a:nth-child(#{$i}) {
+// 		animation-delay: 0.75 + ($i * 0.12s);
+// 	}
+// }
 
 main section > *,
 main section nav a {

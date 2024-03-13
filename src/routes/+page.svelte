@@ -6,11 +6,12 @@
 <svelte:head>
 	<title>Tim Rooke | My portfolio</title>
 	<meta property="og:title" content="Home" />
+	<meta name="description" content="Tim Rooke - Portfolio" />
 </svelte:head>
 <section>
 	<h1>
-		<span class="highlight">Hey!</span> <span class="underline">You've found my portfolio</span>!<br
-		/> I'm a software engineer, marathon runner and aspiring chef.
+		<span class="highlight">Hey! </span>&nbsp;You've found my portfolio!<br /> I'm a software engineer,
+		marathon runner and aspiring chef.
 	</h1>
 	<p class="subheading">I am based in Bournemouth, and work for Legl as a Software Engineer</p>
 
@@ -34,24 +35,6 @@
 
 	.highlight {
 		color: var(--yellow);
-	}
-
-	.underline {
-		position: relative;
-	}
-
-	.underline::after {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		content: '';
-		transform: scaleX(0); /* Initial state */
-		transform-origin: left;
-		display: block;
-		width: 100%;
-		height: 0.05em;
-		background: var(--yellow);
-		animation: scaleUp 1.3s cubic-bezier(0.5, 0, 0.5, 1) 2s forwards; /* Use animation instead of transition */
 	}
 
 	@keyframes scaleUp {

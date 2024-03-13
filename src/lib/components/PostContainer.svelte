@@ -4,7 +4,7 @@
 </script>
 
 <h2 class="month-title">
-	{title ?? 'general'}
+	{title ?? 'more posts'}
 </h2>
 <div class="posts-container" class:no-border={!useBorder}>
 	{#each posts as post}

@@ -1,8 +1,8 @@
 import { fetchMarkdownPosts } from '$lib/utils';
 
-const siteURL = 'https://timrooke.com';
+const siteURL = 'https://timrooke.co.uk';
 const siteTitle = 'Tim Rooke - Portfolio';
-const siteDescription = 'Software Engineer, Product, Running.';
+const siteDescription = 'Tim Rooke - Software Engineer, Product, Startups.';
 
 export const prerender = true;
 

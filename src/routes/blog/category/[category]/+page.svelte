@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Blog | Category: {category}</title>
+	<title>Blog | Category: {data.category}</title>
 	<meta property="og:image" content="https://timrooke.co.uk/images/site-image.png" />
 	<meta name="twitter:image" content="https://timrooke.co.uk/images/site-image.png" />
 </svelte:head>
@@ -15,7 +15,7 @@
 	<h1 class="page-title title-accent">{title}</h1>
 
 	{#if data.posts.length > 0}
-		<PostContainer posts={data.posts} useBorder={true} />
+		<PostContainer posts={data.posts} useBorder={true} title="read more" />
 	{:else}
 		<p>No posts found for this category</p>
 	{/if}

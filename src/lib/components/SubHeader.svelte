@@ -10,7 +10,8 @@
 		about: 'About me',
 		blog: 'Ramblings',
 		contact: 'Get in touch',
-		projects: 'Projects'
+		projects: 'Projects',
+		fallback: 'opps, you broke it'
 	};
 
 	$effect(() => {
@@ -20,7 +21,7 @@
 			if (modifiedTitle === '/') {
 				modifiedTitle = 'Welcome';
 			} else if (modifiedTitle[0] === '/') {
-				modifiedTitle = dictionary[modifiedTitle.slice(1)];
+				modifiedTitle = dictionary[modifiedTitle.slice(1)] ?? dictionary['fallback'];
 			}
 
 			isWorking = false;

@@ -5,6 +5,7 @@
 	import Categories from '$lib/components/Categories.svelte';
 	import PostContent from '$lib/components/PostContent.svelte';
 	import RelatedPosts from '$lib/components/RelatedPosts.svelte';
+	import BackButton from '../../../lib/components/BackButton.svelte';
 
 	let { data } = $props();
 	let readingTime = $state(1);
@@ -28,6 +29,7 @@
 
 <section class="page-container-center">
 	<article>
+		<BackButton />
 		<div class="header title-accent">
 			<h1>{data.title}</h1>
 			<p class="meta">

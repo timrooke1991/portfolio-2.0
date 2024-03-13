@@ -26,7 +26,13 @@
 
 <svelte:head>
 	<title>Tim Rooke | Contact</title>
-	<meta data-key="contact" name="contact" content="My social media and contact details." />
+	<meta
+		data-key="description"
+		name="description"
+		content="My social media and contact details."
+	/>
+	<meta property="og:image" content="https://timrooke.co.uk/images/site-image.png" />
+	<meta name="twitter:image" content="https://timrooke.co.uk/images/site-image.png" />
 </svelte:head>
 
 <section class="page-container-center">

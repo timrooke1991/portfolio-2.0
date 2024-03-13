@@ -1,6 +1,7 @@
 // src/routes/api/posts/+server.js
 import { json } from '@sveltejs/kit';
 import { fetchMarkdownPosts } from '$lib/utils'; // Adjust the import path as necessary
+import { formatDate } from '$lib/utils';
 
 export const GET = async ({ url }) => {
 	// Fetch all posts
@@ -23,7 +24,9 @@ export const GET = async ({ url }) => {
 function groupPosts(posts) {
 	return posts.reduce((acc, post) => {
 		const date = new Date(post.meta.date);
-		const yearMonth = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+		const yearMonth = formatDate(
+			`${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+		);
 
 		if (!acc[yearMonth]) {
 			acc[yearMonth] = { themed: [], topLevel: [] };

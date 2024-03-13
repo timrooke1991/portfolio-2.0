@@ -9,6 +9,7 @@ export const fetchMarkdownPosts = async () => {
 			return {
 				meta: {
 					...metadata,
+					date: formatDate(metadata.date),
 					rawDate: metadata.date
 				},
 				path: postPath
@@ -43,9 +44,6 @@ export function formatDate(dateStr) {
 }
 
 export function getRelatedPosts(currentTheme, allPosts, currentTitle) {
-	console.log('currentTheme:', currentTheme);
-	console.log('allPosts:', allPosts);
-	console.log('currentTitle:', currentTitle);
 	let filteredPosts = allPosts.filter((post) => post?.meta.title !== currentTitle);
 
 	if (currentTheme) {

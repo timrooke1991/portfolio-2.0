@@ -15,6 +15,20 @@
 			subvalue: 'Next month'
 		}
 	];
+	let jobs = [
+		{
+			value: 'Bili',
+			subvalue: "Aug '17 - Jul '18"
+		},
+		{
+			value: 'Axis Workshops',
+			subvalue: "Jul '18 - Jul '22"
+		},
+		{
+			value: 'Legl',
+			subvalue: "Aug '22 - Present"
+		}
+	];
 </script>
 
 <svelte:head>
@@ -55,6 +69,7 @@
 		experience in a wide range of technologies. I'm currently working as a full-stack developer at a
 		digital agency in the UK.
 	</p>
+	<Callout items={jobs} />
 	<p>
 		I'm a web developer from the UK. I've been working in the industry for over 10 years and have
 		experience in a wide range of technologies. I'm currently working as a full-stack developer at a

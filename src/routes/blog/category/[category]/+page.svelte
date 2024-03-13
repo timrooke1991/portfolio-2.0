@@ -6,8 +6,9 @@
 </script>
 
 <svelte:head>
-	<title>Categories - {title}</title>
-	<meta property="og:category" content={title} />
+	<title>Blog | Category: {category}</title>
+	<meta property="og:image" content="https://timrooke.co.uk/images/site-image.png" />
+	<meta name="twitter:image" content="https://timrooke.co.uk/images/site-image.png" />
 </svelte:head>
 
 <section class="page-container-center">

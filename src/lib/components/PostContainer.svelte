@@ -1,8 +1,11 @@
 <script>
 	import PostList from './PostList.svelte';
-	let { posts, useBorder } = $props();
+	let { posts, title, useBorder } = $props();
 </script>
 
+<h2 class="month-title">
+	{title ?? 'general'}
+</h2>
 <div class="posts-container" class:no-border={!useBorder}>
 	{#each posts as post}
 		<PostList {post} />
@@ -18,5 +21,14 @@
 		&.no-border {
 			border-left: none;
 		}
+	}
+
+	.month-title {
+		margin-bottom: 1rem;
+		font-size: 0.85em;
+		font-family: var(--codeFont);
+		color: var(--yellow);
+		text-transform: lowercase;
+		line-height: 1.2;
 	}
 </style>

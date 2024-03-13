@@ -4,6 +4,8 @@
 <svelte:head>
 	<title>Tim Rooke | Projects</title>
 	<meta data-key="projects" name="My noteworthy projects" />
+	<meta property="og:image" content="https://timrooke.co.uk/images/site-image.png" />
+	<meta name="twitter:image" content="https://timrooke.co.uk/images/site-image.png" />
 </svelte:head>
 
 <section class="page-container-center">

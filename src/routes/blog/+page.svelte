@@ -7,7 +7,13 @@
 
 <svelte:head>
 	<title>Tim Rooke | Blog</title>
-	<meta property="og:title" content="Blog" />
+	<meta
+		data-key="description"
+		name="description"
+		content="Thoughts on learning, coding, and random rambles."
+	/>
+	<meta property="og:image" content="https://timrooke.co.uk/images/site-image.png" />
+	<meta name="twitter:image" content="https://timrooke.co.uk/images/site-image.png" />
 </svelte:head>
 
 <section class="page-container-center">
@@ -15,17 +21,14 @@
 
 	{#each Object.keys(data.posts) as monthYear}
 		<div class="month-section">
-			<h2 class="month-title">
-				{monthYear} - {data.posts[monthYear].themed.length > 0
-					? data.posts[monthYear].themed[0].meta.theme
-					: 'general'}
-			</h2>
-
 			{#if data.posts[monthYear].themed.length > 0}
-				<PostContainer posts={data.posts[monthYear].themed} useBorder={true} />
+				<PostContainer
+					title="{monthYear} - {data.posts[monthYear].themed[0].meta.theme}"
+					posts={data.posts[monthYear].themed}
+					useBorder={true}
+				/>
 			{/if}
-
-			<PostContainer posts={data.posts[monthYear].topLevel} useBorder={false} />
+			<PostContainer title={monthYear} posts={data.posts[monthYear].topLevel} useBorder={false} />
 		</div>
 	{/each}
 </section>
@@ -33,14 +36,5 @@
 <style lang="scss">
 	.month-section {
 		margin-bottom: 2rem;
-	}
-
-	.month-title {
-		margin-bottom: 1rem;
-		font-size: 0.85em;
-		font-family: var(--codeFont);
-		color: var(--yellow);
-		text-transform: lowercase;
-		line-height: 1.2;
 	}
 </style>

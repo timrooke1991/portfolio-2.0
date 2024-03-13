@@ -2,8 +2,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fetchMarkdownPosts, getRelatedPosts } from '$lib/utils';
-	import Categories from '../../../lib/components/Categories.svelte';
-	import RelatedPosts from '../../../lib/components/RelatedPosts..svelte';
+	import Categories from '$lib/components/Categories.svelte';
+	import PostContent from '$lib/components/PostContent.svelte';
+	import RelatedPosts from '$lib/components/RelatedPosts.svelte';
 
 	let { data } = $props();
 	let readingTime = $state(1);
@@ -35,7 +36,7 @@
 			</p>
 		</div>
 		<Categories categories={data.categories} />
-		<svelte:component this={data.content} />
+		<PostContent content={data.content} />
 	</article>
 	{#if relatedPosts.length}
 		<RelatedPosts {relatedPosts} theme={data?.theme} />
@@ -54,7 +55,7 @@
 		margin-bottom: var(--quarterNote);
 	}
 
-	article h1 {
+	h1 {
 		font-size: clamp(1.8rem, 1rem + 3vw, 3.5rem);
 		margin-bottom: var(--sixteenthNote);
 		margin-top: 0;

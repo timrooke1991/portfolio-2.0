@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"just-throttle": "^4.2.0",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-slug": "^6.0.0"
 	}

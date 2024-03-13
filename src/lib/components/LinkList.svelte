@@ -17,7 +17,7 @@
 	.menu {
 		position: relative;
 		max-width: 38em;
-		margin-top: var(--halfNote);
+		margin-top: var(--quarterNote);
 	}
 
 	.menu__item {

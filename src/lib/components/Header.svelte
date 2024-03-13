@@ -1,8 +1,10 @@
 <header>
-	<a class="logo" href="/">
-		<span>/* --------- */</span>
-		<span class="name">&nbsp;Tim Rooke&nbsp;</span>
-		<span>/* --------- */</span>
+	<a href="/">
+		<div class="logo">
+			<span>/* --------- */</span>
+			<span class="name">&nbsp;Tim Rooke&nbsp;</span>
+			<span>/* --------- */</span>
+		</div>
 	</a>
 	<nav>
 		<a data-sveltekit-preload-code href="/about"><span>About</span></a>
@@ -12,7 +14,6 @@
 	</nav>
 </header>
 
-
 <style lang="scss">
 	/* Nav */
 	header {
@@ -20,18 +21,29 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: var(--quarterNote);
+
+		@media (max-width: 600px) {
+			flex-direction: column;
+		}
 	}
 
 	.logo {
 		color: var(--yellow);
 		line-height: 1.4;
-    	font-family: "Space Mono", monospace;
+		font-family: 'Space Mono', monospace;
 		width: 205px;
 		text-decoration: none;
 		display: flex;
 		flex-direction: column;
 		align-self: self-start;
-	
+		font-size: 1em;
+
+		@media (max-width: 600px) {
+			font-size: 0.75em;
+			display: flex;
+			align-items: center;
+			width: 100vw;
+		}
 
 		.name {
 			color: var(--yellow);
@@ -49,7 +61,7 @@
 				transition: color 0.45s ease;
 			}
 		}
-	
+
 		span {
 			display: inline-flex;
 			color: var(--greyLight);
@@ -78,6 +90,12 @@
 	nav {
 		display: flex;
 		gap: 1.5em;
+
+		@media (max-width: 600px) {
+			margin-top: var(--quarterNote);
+			flex-direction: row;
+			font-size: 0.85em;
+		}
 	}
 
 	/* Nav Link Item */
@@ -113,11 +131,5 @@
 
 	nav a:hover span::after {
 		transform: scaleX(1);
-	}
-
-	@media (max-width: 600px) {
-		nav {
-			flex-direction: column;
-		}
 	}
 </style>

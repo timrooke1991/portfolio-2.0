@@ -13,9 +13,9 @@
 <section class="page-container-center">
 	<h1 class="page-title title-accent">Where to find me</h1>
 	<p>
-		I'm a web developer from the UK. I've been working in the industry for over 10 years and have
-		experience in a wide range of technologies. I'm currently working as a full-stack developer at a
-		digital agency in the UK.
+		I'm always excited to connect with like-minded individuals, fellow developers, and anyone
+		passionate about technology, learning or running. Whether you're interested in discussing the
+		software, sharing running tips, or just saying hi, get in touch on the below platforms.
 	</p>
 	<LinkList links={socials} />
 </section>

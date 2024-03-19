@@ -15,6 +15,11 @@ export const socials = [
 		target: '_blank'
 	},
 	{
+		href: 'https://www.strava.com/athletes/12160480',
+		name: 'Strava',
+		target: '_blank'
+	},
+	{
 		href: 'mailto:timrooke1991+portfolio.com',
 		name: 'Email',
 		target: '_blank'
@@ -31,6 +36,12 @@ export const navLinks = [
 		href: '/blog',
 		name: 'Blog',
 		label: 'Pensive rambles'
+	},
+	{
+		href: 'https://www.strava.com/athletes/12160480',
+		target: '_blank',
+		name: 'Running',
+		label: 'Stalk my runs'
 	},
 	// {
 	// 	href: '/projects',

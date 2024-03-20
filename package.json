@@ -12,7 +12,6 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.1",
 		"@sveltejs/adapter-netlify": "^4.1.0",
-		"@sveltejs/adapter-static": "^3.0.1",
 		"@sveltejs/kit": "^1.7.2",
 		"autoprefixer": "^10.4.17",
 		"eslint": "^8.28.0",

@@ -1,8 +1,8 @@
 ---
 title: New Learnings
 date: '2024-04-14'
-theme: general
 readingTime: 5
+theme: general
 categories:
   - 'learning'
   - 'personal development'
@@ -19,7 +19,7 @@ However, the sheer volume of technologies to learn can be overwhelming. Recogniz
 
 I've been using monthly focus topics in my new routine. Dedicating a month to a specific area, like Svelte, allows me to dive deep without feeling scattered. This method keeps my learning targeted and engaging. It allows me to dive deeper into well-known technologies like JavaScript, or scratch the surface of a topic that is completely new.
 
-Moving from familiar territories to new horizons keeps the process refreshing, fun, and engaging. I've found that diversifying my learning materials, from books to live coding sessions, helps keep enthusiasm high. A month allows sufficient time for structured guidance - documentation, a tutorial, a book - and permits building a real-world project to help cement any guided learning. Spending a month on one dedicated project can also be great. It provides the ability to go a bit deeper on a subject and build something more substantial. You'll be surprised how much you can get done in a month if you have the enthusiasm and that singular focus. I will be sharing more on what I have built in the coming months. 
+Moving from familiar territories to new horizons keeps the process refreshing, fun, and engaging. I've found that diversifying my learning materials, from books to live coding sessions, helps keep enthusiasm high. A month allows sufficient time for structured guidance - documentation, a tutorial, a book - and permits building a real-world project to help cement any guided learning. Spending a month on one dedicated project can also be great. It provides the ability to go a bit deeper on a subject and build something more substantial. You'll be surprised how much you can get done in a month if you have the enthusiasm and that singular focus. I will be sharing more on what I have built in the coming months.
 
 ### From Theory to Practice
 

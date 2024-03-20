@@ -2,7 +2,6 @@
 <script>
 	let { data } = $props();
 	import PostContainer from '$lib/components/PostContainer.svelte';
-	console.log('data', data);
 </script>
 
 <svelte:head>

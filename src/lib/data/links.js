@@ -28,7 +28,7 @@ export const socials = [
 
 export const navLinks = [
 	{
-		href: '/post',
+		href: '/blog/approach-to-learning',
 		name: 'Read',
 		label: 'My approach to learning'
 	},

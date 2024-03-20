@@ -2,7 +2,7 @@
 export const load = async ({ fetch, params }) => {
 	try {
 		const { category } = params;
-		const response = await fetch(`/api/posts`);
+		const response = await fetch(`/api/posts.json`);
 		const allPosts = await response.json();
 
 		const posts = allPosts.filter((post) => post.meta?.categories?.includes(category));

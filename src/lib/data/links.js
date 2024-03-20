@@ -54,3 +54,8 @@ export const navLinks = [
 		label: 'Where to find me'
 	}
 ];
+
+export const socialsMap = socials.reduce((acc, { href, name }) => {
+	acc[name.toLowerCase()] = href;
+	return acc;
+}, {});

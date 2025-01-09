@@ -81,7 +81,6 @@
 		box-sizing: border-box;
 		bottom: 20px;
 		right: 20px;
-		padding: 10px 20px;
 		font-size: 1em;
 		height: 50px;
 		width: 50px;

@@ -1,14 +1,147 @@
 <script>
 	let { content } = $props();
+	import { onMount } from 'svelte';
+	
+	let firstHeader = $state(null);
+	let lastHeader = $state(null);
+	let headers = $state([]);
+	let scrollLine = $state({ height: 0, visible: false });
+	let activeHeaders = $state(new Set());
+	let visibleHeaders = $state(new Set());
+	
+	$effect(() => {
+		const handleScroll = () => {
+			if (!firstHeader || !lastHeader) return;
+			
+			const headerTop = firstHeader.offsetTop + 10;
+			const lastHeaderBottom = lastHeader.offsetTop + lastHeader.offsetHeight;
+			const scrollPosition = window.scrollY;
+			
+			if (scrollPosition >= headerTop) {
+				scrollLine.visible = true;
+				const maxHeight = lastHeaderBottom - headerTop;
+				const currentHeight = Math.max(0, scrollPosition - headerTop);
+				scrollLine.height = Math.min(currentHeight, maxHeight);
+				
+				const newVisible = new Set();
+				const newActive = new Set();
+
+				headers.forEach(header => {
+					const lineBottom = headerTop + currentHeight;
+					
+					if (lineBottom >= header.offsetTop) {
+						newVisible.add(header);
+						
+						if (scrollPosition + 50 >= header.offsetTop) {
+							newActive.add(header);
+						}
+					}
+				});
+
+				visibleHeaders = newVisible;
+				activeHeaders = newActive;
+			} else {
+				scrollLine.visible = false;
+				scrollLine.height = 0;
+				visibleHeaders = new Set();
+				activeHeaders = new Set();
+			}
+		};
+
+		onMount(() => {
+			headers = Array.from(document.querySelectorAll('.markdown-content h2, .markdown-content h3, .markdown-content h4'));
+			firstHeader = headers[0];
+			lastHeader = headers[headers.length - 1];
+			
+			window.addEventListener('scroll', handleScroll);
+			setTimeout(handleScroll, 0);
+			
+			return () => window.removeEventListener('scroll', handleScroll);
+		});
+	});
 </script>
 
 <div class="markdown-content">
+	{#if scrollLine.visible}
+		<div 
+			class="scroll-line" 
+			style:height="{scrollLine.height}px"
+			style:top="{firstHeader.offsetTop}px"
+		/>
+		{#each headers as header}
+			{#if visibleHeaders.has(header)}
+				<div 
+					class="header-marker" 
+					class:active={activeHeaders.has(header)}
+					style:top="{header.offsetTop + (header.offsetHeight / 2) - 9}px"
+				/>
+			{/if}
+		{/each}
+	{/if}
 	<svelte:component this={content} />
 </div>
 
 <style lang="scss">
+	.markdown-content {
+		position: relative;
+	}
+
+	.scroll-line {
+		position: absolute;
+		margin-left: calc(calc(var(--quarterNote) + 4px) * -1);
+		width: 4px;
+		background: var(--yellow);
+		opacity: 1;
+		transition: height 0.1s linear;
+		padding-top: 10px;
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	.header-marker {
+		position: absolute;
+		left: calc(calc(var(--quarterNote) + 4px) * -1);
+		margin-left: -7px;
+		width: 18px;
+		height: 18px;
+		border-radius: 9px;
+		border: 2px solid var(--yellow);
+		background-color: var(--darkGray);
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		animation: appear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		transform-origin: center;
+
+		&.active {
+			background-color: var(--yellow);
+		}
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	@keyframes appear {
+		from {
+			opacity: 0;
+			transform: scale(0.5);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+	
 	.markdown-content :global(.yellow) {
 		color: var(--yellow);
+	}
+
+	.markdown-content :global(.visible) {
+		&::before {
+			opacity: 0.5;
+			transform: scaleY(1);
+		}
 	}
 	
 	.markdown-content :global(.squiggly-red) {
@@ -36,10 +169,10 @@
 	.markdown-content :global(h2),
 	.markdown-content :global(h3),
 	.markdown-content :global(h4) {
+		position: relative;
 		margin-left: calc(calc(var(--quarterNote) + 4px) * -1);
-		border-left: 4px solid var(--yellow);
 		padding-left: var(--quarterNote);
-		
+		border-left: 4px solid var(--yellow);
 
 		@media (max-width: 768px) {
 			margin-left: 0;

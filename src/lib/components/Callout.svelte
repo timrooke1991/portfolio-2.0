@@ -8,7 +8,7 @@
 	{/if}
 	<div class="callout-content-container">
 		{#each items as item}
-			<div class="callout">
+			<div class="callout" style="width: calc(100% / {items.length || 3})">
 				<p class="value">{item.value}</p>
 				<p class="subvalue">{item.subvalue}</p>
 			</div>
@@ -35,7 +35,6 @@
 
 		div {
 			box-sizing: border-box;
-			width: calc(100% / 3);
 			padding-left: 0.5em;
 			text-align: center;
 		}

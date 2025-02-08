@@ -1,0 +1,170 @@
+.markdown-content :global(pre),
+.markdown-content :global(pre[class*=language-]) {
+	position: relative;
+	background: var(--darkGray);
+	border-radius: 0.75rem;
+	padding: 3rem 1.5rem 1.5rem;
+	margin: 1.5rem 0;
+	overflow-x: auto;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 
+		0 20px 68px rgba(0, 0, 0, 0.55),
+		0 12px 24px rgba(0, 0, 0, 0.12),
+		inset 0 0 60px rgba(0, 0, 0, 0.3);
+
+	/* Terminal-style dots */
+	&::before {
+		content: '';
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		display: inline-block;
+		width: 0.75rem;
+		height: 0.75rem;
+		border-radius: 50%;
+		background: #ff5f56;
+		box-shadow:
+			1.25rem 0 0 #ffbd2e,
+			2.5rem 0 0 #27c93f;
+	}
+
+	/* Optional: language badge */
+	&::after {
+		content: attr(data-language);
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		font-family: var(--monoFont);
+		font-size: 0.75rem;
+		color: var(--lightGray);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	/* Code content styling */
+	code {
+		display: inline-block;
+		min-width: 100%;
+		font-family: var(--monoFont);
+		font-size: 0.9rem;
+		line-height: 1.5;
+		white-space: pre-wrap;
+		word-break: break-word;
+		
+		/* Optional: add a subtle gradient background */
+		background: 
+			linear-gradient(
+				145deg,
+				rgba(255, 255, 255, 0.05) 0%,
+				transparent 100%
+			);
+	}
+
+	/* Scrollbar styling */
+	&::-webkit-scrollbar {
+		height: 8px;
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 4px;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.3);
+		}
+	}
+
+	/* Optional: add a subtle hover effect */
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 
+			0 24px 72px rgba(0, 0, 0, 0.55),
+			0 16px 28px rgba(0, 0, 0, 0.12),
+			inset 0 0 60px rgba(0, 0, 0, 0.3);
+		transition: all 0.2s ease;
+	}
+}
+
+/* Optional: Add syntax highlighting theme customization */
+.markdown-content :global(.token) {
+	&.comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: #8b949e;
+		font-style: italic;
+	}
+
+	&.namespace {
+		opacity: 0.7;
+	}
+
+	&.string,
+	&.attr-value {
+		color: #a5d6ff;
+	}
+
+	&.punctuation,
+	&.operator {
+		color: #79c0ff;
+	}
+
+	&.keyword {
+		color: #ff7b72;
+	}
+
+	&.function {
+		color: #d2a8ff;
+	}
+
+	&.boolean,
+	&.number {
+		color: #79c0ff;
+	}
+
+	&.property {
+		color: #79c0ff;
+	}
+
+	&.tag {
+		color: #7ee787;
+	}
+
+	&.symbol {
+		color: #f0883e;
+	}
+
+	&.deleted {
+		color: #ffdcd7;
+		background-color: #67060c;
+	}
+
+	&.inserted {
+		color: #aff5b4;
+		background-color: #033a16;
+	}
+}
+
+.markdown-content :global(.squiggly-red) {
+	position: relative;
+	text-decoration: none; /* Remove native underline */
+	background-image: url("data:image/svg+xml,%3Csvg width='80' height='8' viewBox='0 0 80 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3C10 3 10 5 20 5C30 5 30 3 40 3C50 3 50 5 60 5C70 5 70 3 80 3' stroke='%23e6002a' stroke-width='1.5'/%3E%3C/svg%3E");
+	background-position: bottom;
+	background-repeat: repeat-x;
+	background-size: 40px 4px;
+	padding-bottom: 3px;
+
+	&.animated {
+		animation: squiggly-slide 0.8s linear infinite;
+	}
+}
+
+@keyframes squiggly-slide {
+	from {
+		background-position: bottom left 0px;
+	}
+	to {
+		background-position: bottom left -40px;
+	}
+} 

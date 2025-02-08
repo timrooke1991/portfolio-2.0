@@ -5,7 +5,8 @@ export const GET = async () => {
 	// Fetch all posts
 	const allPosts = await fetchMarkdownPosts();
 
-	const sortedPosts = allPosts.sort((a, b) => new Date(a.meta.date) - new Date(b.meta.date));
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.meta.rawDate) - new Date(a.meta.rawDate));
+
 	// Group posts by year and month, then by theme
 	const groupedPosts = groupPosts(sortedPosts);
 	return json(groupedPosts);

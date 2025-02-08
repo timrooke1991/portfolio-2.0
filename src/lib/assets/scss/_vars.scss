@@ -56,7 +56,7 @@ $xxxl: 122rem;
 
 	--grey: #1d1f20;
 	--greyLight: #adadad;
-	--offWhite: #fce8e8;
+	--offWhite: #e1e1e1;
 	--purple: #ae94c0;
 	--green: #b5bc67;
 	--orange: #dd925f;
@@ -78,7 +78,7 @@ $xxxl: 122rem;
 	--blueToYellow: #7ba7bc, #75b1bf, #66c6b6, #4fd27b, #56e035, #acef1b, #faf008, #ffd100;
 	--paper: var(--black);
 	--paperHSL: var(--blackHSL);
-	--ink: var(--white);
+	--ink: var(--offWhite);
 	--headingColor: var(--white);
 	--accentColor: var(--lightBlue);
 	--linkColor: var(--lightBlue);
@@ -118,4 +118,8 @@ $xxxl: 122rem;
 	}
 
 	font-size: var(--bodyFontSize);
+
+	--darkGray: #1a1a1a;
+	--lightGray: #a0a0a0;
+	--monoFont: 'JetBrains Mono', 'Fira Code', monospace;
 }

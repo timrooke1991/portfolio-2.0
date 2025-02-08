@@ -8,6 +8,7 @@
 // @use './print';
 @use './_vars';
 @use './code_highlighting';
+@import 'code-blocks';
 
 *,
 *:before,
@@ -65,7 +66,7 @@ body {
 
 body::before {
 	content: '';
-	position: absolute;
+	position: fixed;
 	opacity: 0.1;
 	z-index: -1;
 	top: 0;

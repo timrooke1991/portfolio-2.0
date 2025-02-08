@@ -8,7 +8,7 @@
 	<meta property="og:title" content="Home" />
 	<meta name="description" content="Tim Rooke - Portfolio" />
 </svelte:head>
-<section>
+<section class="intro">
 	<h1>
 		<span class="highlight">Hey! </span>&nbsp;You've found my portfolio!<br /> I'm a software engineer,
 		marathon runner and aspiring chef.
@@ -56,6 +56,51 @@
 	p {
 		margin: 0 var(--halfNote) var(--halfNote) 0;
 		max-width: 38em;
-		color: var(--ink);
+		color: var(--offWhite);
+	}
+
+	@for $i from 1 through 4 {
+		.intro > *:nth-child(#{$i}) {
+			animation-delay: 0.2s + ($i * 0.14s);
+		}
+	}
+
+	.intro {
+		width: 100%;
+		position: relative;
+		margin-top: var(--wholeNote);
+
+		> * {
+			opacity: 0;
+			animation: fade_in_intro 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			> * {
+				animation-name: fade_in_intro_reduced;
+			}
+		}
+	}
+
+	@keyframes fade_in_intro {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fade_in_intro_reduced {
+		from {
+			opacity: 0;
+			transform: translateY(0);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 </style>

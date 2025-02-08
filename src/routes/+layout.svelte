@@ -69,9 +69,6 @@
 {/if}
 
 <style lang="scss">
-	main {
-		padding-bottom: calc(4 * var(--halfNote));
-	}
 
 	.back-to-top {
 		position: fixed;

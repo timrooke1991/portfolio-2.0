@@ -9,7 +9,7 @@ categories:
 preview: "I've embarked on a new routine of building and learning, which has led to the creation of this site. Built with Svelte and SvelteKit, it represents a much-improved upgrade from my previous minimalist site and is built using a Svelte."
 ---
 
-### Welcome! 👋
+## Welcome! 👋
 
 I've embarked on a new routine of building and learning, which has led to the creation of this site. Built with Svelte and SvelteKit, it represents a much-improved upgrade from my previous minimalist site and is built using a Svelte (more on that in future posts). The site is not fully complete, I am still to add a project page and some other bits.
 

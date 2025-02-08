@@ -9,7 +9,7 @@ categories:
 preview: 'LeetCode has always been something I’ve dipped in and out of, but I’ve never committed to structured practice. That changes now. I’m starting the Neetcode 150 challenge to strengthen my problem-solving skills, and I’ll be documenting my progress along the way.'
 ---
 
-### A Structured Approach to Problem-Solving
+## A Structured Approach to Problem-Solving
 
 LeetCode has always been something I have been interested in trying, but I have never attempted it in a particularly structured way. I’ve tackled problems here and there, usually when I needed to prepare for an interview or felt like sharpening my skills. But I’ve never set a clear goal or followed a dedicated roadmap. Enter Neetcode 150.
 

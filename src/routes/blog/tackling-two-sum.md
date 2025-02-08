@@ -9,7 +9,7 @@ categories:
 preview: "Two Sum is one of those classic algorithm problems that appear simple but can teach you a lot about optimising solutions. Here's how I went from a brute force attempt to a highly efficient solution."
 ---
 
-### Tackling Two Sum
+## Tackling Two Sum
 
 The ["Two Sum" problem](https://leetcode.com/problems/two-sum/description/) on LeetCode is a quintessential entry-level problem that introduces concepts of algorithm design and optimisation. While the task itself is straightforward—find two numbers in an array that add up to a given target—it opens the door to discussions about brute force approaches versus optimised solutions.
 

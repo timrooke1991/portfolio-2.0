@@ -9,7 +9,7 @@ categories:
 preview: "After some time away from writing, I'm keen to get into a routine of sharing and building more frequently. My posts, including this one, outline my newly adopted learning process, aiming to both consolidate my understanding and potentially aid others."
 ---
 
-### Learning and Development
+## Learning and Development
 
 As a software engineer, growth hinges on three primary points: consuming knowledge, practice, and sharing insights. This cycle begins with learning new concepts through reading documentation, following tutorials, and experimenting with code. Meanwhile, applying this theoretical knowledge to practical applications is also essential. Then, the key is to share these learnings, whether through writing, like this blog, or communicating with or educating colleagues.
 

@@ -10,7 +10,7 @@ categories:
 preview: 'After years of working with React, I found myself increasingly frustrated with the overhead modern frontend development demands. Svelte’s simplicity has been a refreshing alternative, stripping away much of the unnecessary complexity and making development feel more natural.'
 ---
 
-### A Change of Perspective
+## From React to Svelte
 
 Having spent most of my frontend career working with React, I’ve become all too familiar with the growing complexities that come with modern frontend development—build tools, linters, endless config files, and an ever-expanding ecosystem of dependencies. While powerful, React's approach sometimes feels like an abstraction too far. With Svelte, I’ve found something that aligns more closely with what I actually want from a frontend framework: simplicity.
 

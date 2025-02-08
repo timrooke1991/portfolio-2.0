@@ -90,7 +90,7 @@ main {
 }
 
 a {
-	color: var(--greyLight);
+	color: var(--purple);
 	text-decoration: none;
 	transition: color 0.2s ease-in-out;
 
@@ -99,7 +99,7 @@ a {
 	}
 
 	&:hover {
-		color: var(--purple);
+		color: var(--lightGray);
 	}
 }
 

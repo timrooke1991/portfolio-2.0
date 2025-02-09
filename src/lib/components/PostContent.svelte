@@ -8,12 +8,13 @@
 	let scrollLine = $state({ height: 0, visible: false });
 	let activeHeaders = $state(new Set());
 	let visibleHeaders = $state(new Set());
+	let initialized = $state(false);
 	
 	$effect(() => {
 		const handleScroll = () => {
-			if (!firstHeader || !lastHeader) return;
+			if (!firstHeader || !lastHeader || !initialized) return;
 			
-			const headerTop = firstHeader.offsetTop + 10;
+			const headerTop = firstHeader.offsetTop;
 			const lastHeaderBottom = lastHeader.offsetTop + lastHeader.offsetHeight;
 			const scrollPosition = window.scrollY;
 			
@@ -49,12 +50,18 @@
 		};
 
 		onMount(() => {
-			headers = Array.from(document.querySelectorAll('.markdown-content h2, .markdown-content h3, .markdown-content h4'));
-			firstHeader = headers[0];
-			lastHeader = headers[headers.length - 1];
-			
-			window.addEventListener('scroll', handleScroll);
-			setTimeout(handleScroll, 0);
+			// Wait for next tick to ensure content is properly rendered
+			setTimeout(() => {
+				headers = Array.from(document.querySelectorAll('.markdown-content h2, .markdown-content h3, .markdown-content h4'));
+				firstHeader = headers[0];
+				lastHeader = headers[headers.length - 1];
+				initialized = true;
+				
+				// Now that we're initialized, do initial scroll check
+				handleScroll();
+				
+				window.addEventListener('scroll', handleScroll);
+			}, 100);
 			
 			return () => window.removeEventListener('scroll', handleScroll);
 		});
@@ -62,7 +69,7 @@
 </script>
 
 <div class="markdown-content">
-	{#if scrollLine.visible}
+	{#if scrollLine.visible && initialized}
 		<div 
 			class="scroll-line" 
 			style:height="{scrollLine.height}px"
@@ -93,7 +100,6 @@
 		background: var(--yellow);
 		opacity: 1;
 		transition: height 0.1s linear;
-		padding-top: 10px;
 
 		@media (max-width: 768px) {
 			display: none;

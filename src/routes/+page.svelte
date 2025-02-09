@@ -85,7 +85,7 @@
 				<span class="years">5 yrs</span>
 			</a>
 			<a href="/blog/category/typescript" class="tech-row">
-				<span class="emoji">🎯</span>
+				<span class="emoji">🖊️</span>
 				<span class="tech">TypeScript</span>
 				<span class="years">5 yrs</span>
 			</a>
@@ -250,6 +250,10 @@
 		font-family: var(--monoFont);
 		font-size: 0.8rem;
 		color: var(--lightGray);
+
+		@media (max-width: 768px) {
+			font-size: 0.75rem;
+		}
 	}
 
 	.grid-header {
@@ -268,23 +272,26 @@
 			display: inline-block;
 			width: 2rem;
 		}
+
+		@media (max-width: 480px) {
+			gap: 0.25rem;
+			
+			.emoji {
+				width: 1.5rem;
+			}
+		}
 	}
 
 	// Specific grid layouts
-	.marathon-row {
+	.marathon-row,
+	.tech-row,
+	.blog-row {
 		grid-template-columns: 2rem 5rem 3rem auto;
 		
 		&.completed {
 			color: var(--offWhite);
 		}
-	}
 
-	.tech-row {
-		grid-template-columns: 2rem 5rem 3rem;
-	}
-
-	.blog-row {
-		grid-template-columns: 2rem 8rem 4rem;
 	}
 
 	// Link styles
@@ -314,10 +321,41 @@
 		padding-top: var(--wholeNote);
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: var(--wholeNote);
+		gap: var(--halfNote);
 
 		.footer-section:not(:first-child) {
 			padding-left: var(--wholeNote);
+		}
+
+		// Tablet layout
+		@media (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--halfNote);
+
+			.footer-section:not(:first-child) {
+				padding-left: 0;
+			}
+
+			.footer-section:last-child {
+				grid-column: 1 / -1;
+			}
+		}
+
+		// Mobile layout
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			gap: var(--halfNote);
+			margin-top: var(--halfNote);
+			padding-top: var(--halfNote);
+
+			.footer-section {
+				padding: 0;
+				
+				&:not(:last-child) {
+					padding-bottom: var(--halfNote);
+					border-bottom: 1px solid var(--darkGray);
+				}
+			}
 		}
 	}
 </style>

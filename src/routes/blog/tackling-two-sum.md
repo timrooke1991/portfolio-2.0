@@ -185,10 +185,10 @@ This method eliminates the need for complex duplicate handling and simplifies th
 
 ### Lessons Learned
 
-- <strong class="yellow">Start Simple, Then Optimise</strong> - My initial brute force solution wasn’t efficient, but it helped me understand the problem. Starting simple often gives you clarity before diving into more complex approaches.
-- <strong class="yellow"> Hash Maps Are Powerful</strong> - Using a hash map allowed me to trade a bit of space for a lot of time efficiency. This trade-off is common in algorithm design and is worth considering when performance matters.
-- <strong class="yellow">Iterative Improvement</strong> - It’s okay if your first solution isn’t perfect. Algorithm challenges are as much about the process as the result. Refining my approach and seeing measurable improvements was incredibly rewarding.
-- <strong class="yellow">Research for Further Optimisation</strong> - Taking time to research after solving a problem can uncover opportunities for further improvement. Instead of rushing to the next question, exploring how others approached the problem or identifying alternative techniques can lead to cleaner, more efficient solutions and deepen your understanding.
+- <strong class="yellow">Start simple, then optimise</strong> - My initial brute force solution wasn’t efficient, but it helped me understand the problem. Starting simple often gives you clarity before diving into more complex approaches.
+- <strong class="yellow"> Hash maps are useful</strong> - Using a hash map allowed me to trade a bit of space for a lot of time efficiency. This trade-off is common in algorithm design and is worth considering when performance matters.
+- <strong class="yellow">Iterative improvement</strong> - It’s okay if your first solution isn’t perfect. Algorithm challenges are as much about the process as the result. Refining my approach and seeing measurable improvements was rewarding. 
+- <strong class="yellow">Research for further optimisation</strong> - Taking time to research after solving a problem can uncover opportunities for further improvement. Instead of rushing to the next question, exploring how others approached the problem or identifying alternative techniques can lead to cleaner, more efficient solutions and deepen your understanding.
 
 ### Conclusion
 

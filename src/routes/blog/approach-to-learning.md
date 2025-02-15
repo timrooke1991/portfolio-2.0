@@ -1,6 +1,6 @@
 ---
 title: New Learnings
-date: '2024-04-14'
+date: '2025-01-14'
 readingTime: 5
 theme: general
 categories:

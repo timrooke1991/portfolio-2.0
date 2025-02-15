@@ -1,6 +1,6 @@
 ---
 title: Hello world, hello new site
-date: '2024-03-07'
+date: '2025-01-01'
 slug: 'hello-world'
 readingTime: 3
 theme: 'general'

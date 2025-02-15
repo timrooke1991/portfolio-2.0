@@ -19,12 +19,12 @@ This curated list appealed to me for a number of reasons.
 
 - It brings structure by providing categorised examples (Dynamic programming, Arrays and Hashes, etc) while giving you a flavour of easy, medium and hard challenges that follow the same theme and naturally build on one another.&#x20;
 
-* I've found some Leetcode problems to be really poorly explained or lacking in examples and constraint information, which makes it challenging to even know what the initial problem requirements are, so my hope is this list will filter those problems out.
-* The Neetcode 150 is pretty popular online. It was devised by a YouTuber, and a bunch of people have provided videos, blogs and solutions. Therefore, for more challenging problems, it should not be difficult to find content explaining the solution and resolve any issues that I run into.
+* I've found some Leetcode problems to be really poorly explained or lacking in examples, which makes it challenging to even know what the initial problem requirements are, so my hope is this list will filter those problems out.
+* The Neetcode 150 is pretty popular online. It was devised by the YouTuber, Neetcode, and a bunch of people have provided videos, blogs and solutions. Therefore, for more challenging problems, it should not be difficult to find content explaining the solution and resolve any issues that I run into.
 
 ### The Plan
 
-I’ll be aiming to complete a few problems per week, depending on complexity and available time. Some problems will be straightforward, others will take hours to crack, and that’s okay.. The goal is to engage deeply, understand the reasoning behind solutions, and improve both speed and efficiency over time.
+I’ll be aiming to complete a few problems per week, depending on complexity and available time. Some problems will be straightforward, others will take some more thinking for sure... The goal is to engage properly, understand the reasoning behind solutions, and improve both speed and efficiency over time. I'm less concerned about independantly solving every individual problem; some help may be required, but engagement and understanding the solution how it works and why it works is the fundamental requirement. 
 
 To keep myself accountable, I’ll be sharing regular blog updates—every couple of weeks—on my experiences, challenges, and insights. Whether it’s an elegant solution I’m particularly proud of or a frustrating problem that took longer than expected, I’ll document it all.
 
@@ -33,14 +33,11 @@ To keep myself accountable, I’ll be sharing regular blog updates—every coupl
 Starting out, I’ve already noticed a few things:
 
 1. \*\*Solve on paper first, then code\*\* - It is always easier to talk the solution out first, and then code it.
-2. **Brute Force First, Optimise Later** – Sometimes, the best approach is to get _something_ working before worrying about efficiency. Many problems start with a naive solution that can later be refined. I have this issue a lot - overthinking, and trying to rush to the best possible solution (often without planning it out 😅) and then giving up because it’s way too difficult to hold in my head.
-3. **Explaining Solutions is Key** – Writing about solutions, whether in comments, blog posts, or discussions, forces a deeper understanding. It’s one thing to arrive at an answer, but articulating the _why_ behind it strengthens retention.
+2. **Brute force first, optimise later** – Sometimes, the best approach is to get _something_ working before worrying about the perfect solution. Many problems start with a naive solution that can later be refined. I have this issue a lot - overthinking, and trying to rush to the best possible solution (often without planning it out 😅) and then giving up because it’s way too difficult to hold in my head.
 
 ### Roadblocks and Challenges
 
-Obviously, not everything will be smooth sailing. Some problems, especially those involving recursion and dynamic programming, have been particularly challenging. It’s easy to get stuck in a loop of overcomplicating things when a simpler approach exists, or getting tunnel vision towards one particular solution and being unable to step back. Additionally, time constraints mean I can’t always dedicate as much effort as I’d like to certain problems.
-
-That said, I am aware that the struggle is part of the process. I’m learning to embrace the difficulty and treat every tough problem as an opportunity to grow. It’s also a reminder that some days will be more productive than others, and that’s completely fine.
+Obviously, not everything will be smooth sailing. It’s easy to get stuck in a loop of overcomplicating things when a simpler approach exists, or getting tunnel vision towards one particular solution and being unable to step back. Additionally, time constraints mean I can't always dedicate as much effort as I’d like to certain problems.
 
 ### Moving Forward
 

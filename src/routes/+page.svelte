@@ -54,9 +54,8 @@
 	<div class="footer-section">
 		<h3>Latest Posts</h3>
 		<ul>
-			<li><a href="/blog/svelte-first-impressions">Svelte First Impressions</a></li>
-			<li><a href="/blog/system-design">System Design Principles</a></li>
-			<li><a href="/blog/ai-tools">AI Tools for Developers</a></li>
+			<li><a href="/blog/svelte-first-impressions">Reflections on Svelte</a></li>
+			<li><a href="/blog/neetcode-150">Neetcode 150</a></li>
 		</ul>
 	</div>
 	<div class="footer-section">
@@ -218,7 +217,7 @@
 
 	// Footer layout
 	footer {
-		margin-top: var(--quarterNote);
+		margin-top: var(--wholeNote);
 		padding: var(--halfNote) 0;
 		display: grid;
 		grid-template-columns: 2fr 1fr 1fr;

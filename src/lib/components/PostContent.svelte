@@ -212,6 +212,16 @@
 		line-height: 1.5;
 	}
 
+	.markdown-content :global(code:not(pre code)) {
+		background: var(--darkGray);
+		color: var(--yellow);
+		padding: 0.2em 0.4em;
+		border-radius: 0.3em;
+		font-size: 0.9em;
+		font-family: var(--monoFont);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
 	.markdown-content :global(pre),
 	.markdown-content :global(pre[class*=language-]) {
 		position: relative;

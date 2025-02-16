@@ -1,8 +1,10 @@
 <script>
 	import LinkList from '$lib/components/LinkList.svelte';
 	import { navLinks, socials } from '$lib/data/links.js';
+	import StravaSeparator from '$lib/components/StravaSeparator.svelte';
 </script>
 
+<StravaSeparator />
 <footer>
 	<div>
 		<h3 class="title-accent">Where to find me</h3>
@@ -20,7 +22,6 @@
 
 <style>
 	footer {
-		border-top: 1px solid var(--greyLight);
 		display: flex;
 		flex-direction: row;
 		width: 100%;

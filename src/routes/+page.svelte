@@ -1,6 +1,7 @@
 <script>
 	import LinkList from '$lib/components/LinkList.svelte';
 	import { navLinks } from '$lib/data/links.js';
+	import StravaSeparator from '$lib/components/StravaSeparator.svelte';
 </script>
 
 <svelte:head>
@@ -35,97 +36,69 @@
 	<LinkList links={navLinks} />
 </section>
 
+<StravaSeparator />
+
 <footer>
 	<div class="footer-section">
-		<div class="marathon-grid">
-			<div class="grid-header">// World Marathon Majors</div>
-			<div class="marathon-row">
-				<span class="emoji">🎌</span>
-				<span class="city">Tokyo</span>
-				<span class="status">[ ]</span>
-			</div>
-			<div class="marathon-row">
-				<span class="emoji">🍀</span>
-				<span class="city">Boston</span>
-				<span class="status">[ ]</span>
-			</div>
-			<div class="marathon-row completed">
-				<span class="emoji">🇬🇧</span>
-				<span class="city">London</span>
-				<span class="status">[✓]</span>
-			</div>
-			<div class="marathon-row completed">
-				<span class="emoji">🏛️</span>
-				<span class="city">Berlin</span>
-				<span class="status">[✓]</span>
-			</div>
-			<div class="marathon-row">
-				<span class="emoji">⭐</span>
-				<span class="city">Chicago</span>
-				<span class="status">[ ]</span>
-			</div>
-			<div class="marathon-row">
-				<span class="emoji">🗽</span>
-				<span class="city">New York</span>
-				<span class="status">[ ]</span>
-			</div>
-		</div>
-	</div>
-	<div class="footer-section">
-		<div class="tech-grid">
-			<div class="grid-header">// Tech</div>
-			<a href="/blog/category/javascript" class="tech-row">
-				<span class="emoji">💻</span>
-				<span class="tech">JavaScript</span>
-				<span class="years">10 yrs</span>
+		<h3>About</h3>
+		<p>Software engineer focused on building great products with JavaScript (TypeScript, React, Vue and Svelte) and Python. Previous experience with Node, Ruby, and PHP. Exploring the AI world with tools like Cursor and Claude.</p>
+		<div class="social-links">
+			<a href="https://github.com/timrooke1991" class="social-link">
+				<span class="emoji">📦</span>GitHub
 			</a>
-			<a href="/blog/category/react" class="tech-row">
-				<span class="emoji">⚛️</span>
-				<span class="tech">React</span>
-				<span class="years">5 yrs</span>
-			</a>
-			<a href="/blog/category/typescript" class="tech-row">
-				<span class="emoji">🖊️</span>
-				<span class="tech">TypeScript</span>
-				<span class="years">5 yrs</span>
-			</a>
-			<a href="/blog/category/node" class="tech-row">
-				<span class="emoji">🎯</span>
-				<span class="tech">Node</span>
-				<span class="years">5 yrs</span>
-			</a>
-			<a href="/blog/category/python" class="tech-row">
-				<span class="emoji">🐍</span>
-				<span class="tech">Python</span>
-				<span class="years">3 yrs</span>
-			</a>
-			<a href="/blog/category/vue" class="tech-row">
-				<span class="emoji">♥️</span>
-				<span class="tech">Vue</span>
-				<span class="years">3 yrs</span>
+			<a href="https://twitter.com/timrooke1991" class="social-link">
+				<span class="emoji">🐦</span>Twitter
 			</a>
 		</div>
 	</div>
 	<div class="footer-section">
-		<div class="blog-grid">
-			<div class="grid-header">// Recent topics</div>
-			<a href="/blog/category/ai" class="blog-row">
-				<span class="emoji">🤖</span>
-				<span class="title">AI & LLMs</span>
-			</a>
-			<a href="/blog/category/algorithms" class="blog-row">
-				<span class="emoji">🧮</span>
-				<span class="title">Algorithms</span>
-			</a>
-			<a href="/blog/category/svelte" class="blog-row">
-				<span class="emoji">🎨</span>
-				<span class="title">Svelte</span>
-			</a>
-			<a href="/blog/category/system-design" class="blog-row">
-				<span class="emoji">🔍</span>
-				<span class="title">Systems</span>
-			</a>
-		</div>
+		<h3>Latest Posts</h3>
+		<ul>
+			<li><a href="/blog/svelte-first-impressions">Svelte First Impressions</a></li>
+			<li><a href="/blog/system-design">System Design Principles</a></li>
+			<li><a href="/blog/ai-tools">AI Tools for Developers</a></li>
+		</ul>
+	</div>
+	<div class="footer-section">
+		<h3>Marathon Majors</h3>
+		<ul class="marathon-list">
+			<li class="completed">
+				<a href="https://www.strava.com/activities/2748903017" class="marathon-link">
+					<span class="emoji">🏛️</span>
+					<span>Berlin</span>
+				</a>
+			</li>
+			<li class="completed">
+				<a href="https://www.strava.com/activities/8943674317" class="marathon-link">
+					<span class="emoji">🇬🇧</span>
+					<span>London</span>
+				</a>
+			</li>
+			<li>
+				<a class="marathon-link">
+					<span class="emoji">🎌</span>
+					<span>Tokyo</span>
+				</a>
+			</li>
+			<li>
+				<a class="marathon-link">
+					<span class="emoji">🍀</span>
+					<span>Boston</span>
+				</a>
+			</li>
+			<li>
+				<a class="marathon-link">
+					<span class="emoji">⭐</span>
+					<span>Chicago</span>
+				</a>
+			</li>
+			<li>
+				<a class="marathon-link">
+					<span class="emoji">🗽</span>
+					<span>New York</span>
+				</a>
+			</li>
+		</ul>
 	</div>
 </footer>
 
@@ -243,118 +216,122 @@
 		}
 	}
 
-	// Common grid styles
-	.marathon-grid,
-	.tech-grid,
-	.blog-grid {
-		font-family: var(--monoFont);
-		font-size: 0.8rem;
-		color: var(--lightGray);
-
-		@media (max-width: 768px) {
-			font-size: 0.75rem;
-		}
-	}
-
-	.grid-header {
-		margin-bottom: 0.5rem;
-	}
-
-	// Common row styles
-	.marathon-row,
-	.tech-row,
-	.blog-row {
-		display: grid;
-		gap: 0.5rem;
-		line-height: 1.6;
-
-		.emoji {
-			display: inline-block;
-			width: 2rem;
-		}
-
-		@media (max-width: 480px) {
-			gap: 0.25rem;
-			
-			.emoji {
-				width: 1.5rem;
-			}
-		}
-	}
-
-	// Specific grid layouts
-	.marathon-row,
-	.tech-row,
-	.blog-row {
-		grid-template-columns: 2rem 5rem 3rem auto;
-		
-		&.completed {
-			color: var(--offWhite);
-		}
-
-	}
-
-	// Link styles
-	.tech-row,
-	.blog-row {
-		text-decoration: none;
-		transition: all 0.2s ease;
-		color: var(--offWhite);
-		opacity: 0.7;
-		
-		&:hover {
-			transform: translateX(4px);
-			opacity: 1;
-		}
-
-		.tech,
-		.title,
-		.years {
-			color: inherit;
-			display: inline-block;
-		}
-	}
-
 	// Footer layout
 	footer {
-		margin-top: var(--wholeNote);
-		padding-top: var(--wholeNote);
+		margin-top: var(--quarterNote);
+		padding: var(--halfNote) 0;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 2fr 1fr 1fr;
 		gap: var(--halfNote);
+		font-size: 0.9rem;
+		color: var(--lightGray);
 
-		.footer-section:not(:first-child) {
-			padding-left: var(--wholeNote);
-		}
-
-		// Tablet layout
-		@media (max-width: 1024px) {
-			grid-template-columns: repeat(2, 1fr);
-			gap: var(--halfNote);
-
-			.footer-section:not(:first-child) {
-				padding-left: 0;
+		.footer-section {
+			h3 {
+				color: var(--offWhite);
+				font-size: 1rem;
+				margin-bottom: 0.75rem;
+				font-weight: 500;
 			}
 
-			.footer-section:last-child {
+			p {
+				line-height: 1.5;
+				margin-bottom: 1rem;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0;
+
+				li {
+					margin-bottom: 0.5rem;
+
+					a {
+						color: var(--lightGray);
+						text-decoration: none;
+						transition: all 0.2s ease;
+
+						&:hover {
+							color: var(--yellow);
+						}
+					}
+				}
+			}
+
+			.marathon-list {
+				list-style: none;
+				padding: 0;
+
+				li {
+					margin-bottom: 0.5rem;
+					opacity: 0.5;
+					transition: all 0.2s ease;
+
+					&.completed {
+						opacity: 1;
+					}
+
+					.marathon-link {
+						display: flex;
+						align-items: center;
+						gap: 0.75rem;
+						color: var(--lightGray);
+						text-decoration: none;
+						transition: all 0.2s ease;
+						cursor: pointer;
+
+						&:hover {
+							transform: translateX(4px);
+							color: var(--yellow);
+						}
+
+						.emoji {
+							font-size: 1.1rem;
+						}
+					}
+				}
+			}
+		}
+
+		.social-links {
+			display: flex;
+			gap: 1rem;
+
+			.social-link {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				color: var(--lightGray);
+				text-decoration: none;
+				transition: all 0.2s ease;
+
+				&:hover {
+					color: var(--yellow);
+					transform: translateY(-1px);
+				}
+
+				.emoji {
+					font-size: 1.1rem;
+				}
+			}
+		}
+
+		@media (max-width: 1024px) {
+			grid-template-columns: 1fr 1fr;
+
+			.footer-section:first-child {
 				grid-column: 1 / -1;
 			}
 		}
 
-		// Mobile layout
 		@media (max-width: 768px) {
 			grid-template-columns: 1fr;
-			gap: var(--halfNote);
-			margin-top: var(--halfNote);
-			padding-top: var(--halfNote);
+			gap: var(--quarterNote);
+			margin-top: var(--quarterNote);
+			padding: var(--quarterNote) 0;
 
 			.footer-section {
-				padding: 0;
-				
-				&:not(:last-child) {
-					padding-bottom: var(--halfNote);
-					border-bottom: 1px solid var(--darkGray);
-				}
+				padding-bottom: var(--quarterNote);
 			}
 		}
 	}

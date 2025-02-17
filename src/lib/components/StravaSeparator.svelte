@@ -2,7 +2,7 @@
 	// Generate random heights for the bars to create a pace/elevation chart look
 	const barCount = 200;
 	const bars = Array.from({ length: barCount }, () => ({
-		height: Math.random() * 100,
+		height: Math.max(1, Math.random() * 100),
 		width: 4
 	}));
 
@@ -64,50 +64,16 @@
 		margin: 0 auto;
 		padding-bottom: 2px;
 		border-bottom: 1px solid rgba(229, 229, 229, 0.25);
-		opacity: 0;
-		transition: opacity 0.3s ease;
-
-		&.visible {
-			opacity: 1;
-
-			.bar {
-				animation: waveIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-				animation-fill-mode: forwards;
-			}
-
-			@for $i from 1 through 200 {
-				.bar:nth-child(#{$i}) {
-					animation-delay: #{$i * 0.004}s;
-				}
-			}
-		}
 	}
 
 	.bar {
 		background: var(--lightGray);
 		opacity: 0.6;
-		min-height: 3px;
-		border-radius: 1px 1px 0 0;
-		transform: scaleY(0);
-		transform-origin: bottom;
-		will-change: transform;
 
 		&:hover {
 			opacity: 1;
 			transition: opacity 0.3s ease;
 			background: var(--yellow);
-		}
-	}
-
-	@keyframes waveIn {
-		0% {
-			transform: scaleY(0);
-		}
-		50% {
-			transform: scaleY(1.2);
-		}
-		100% {
-			transform: scaleY(1);
 		}
 	}
 </style> 

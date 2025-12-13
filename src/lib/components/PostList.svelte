@@ -6,7 +6,7 @@
 
 <article>
 	<div class="post">
-		<a href={post.path}>
+		<a href={post.path} class="post-link">
 			<h3>
 				{post.meta.title}
 			</h3>
@@ -19,6 +19,17 @@
 				<span class="time">{post.meta?.readingTime ?? 5} min read</span>
 			</p>
 		</a>
+		{#if post.meta.projectUrl}
+			<a
+				href={post.meta.projectUrl}
+				class="project-link"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="View project for {post.meta.title}"
+			>
+				Project ↗
+			</a>
+		{/if}
 	</div>
 </article>
 
@@ -67,6 +78,10 @@
 		}
 	}
 
+	.post-link {
+		display: block;
+	}
+
 	p.preview {
 		color: var(--midGray);
 	}
@@ -85,5 +100,21 @@
 			font-size: 0.75em;
 			color: var(--purple);
 		}
+	}
+
+	.project-link {
+		display: inline-flex;
+		font-family: var(--codeFont);
+		font-size: 0.75em;
+		color: var(--purple);
+		margin-top: 0.35rem;
+		margin-bottom: 0.25rem;
+		text-decoration: none;
+		width: fit-content;
+		transition: color 0.2s ease;
+	}
+
+	.project-link:hover {
+		color: var(--yellow);
 	}
 </style>

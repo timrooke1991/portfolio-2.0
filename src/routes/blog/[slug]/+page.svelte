@@ -27,7 +27,15 @@
 			<h1>{data.title}</h1>
 			<p class="meta">
 				<span class="date">{data?.date}</span>
-				<span class="time">{data?.readingTime ?? 3} min read</span>
+				<span class="time">
+					{data?.readingTime ?? 3} min read
+					{#if data.projectUrl}
+						<span class="sep">·</span>
+						<a href={data.projectUrl} class="project-link" target="_blank" rel="noopener noreferrer">
+							Project ↗
+						</a>
+					{/if}
+				</span>
 			</p>
 		</div>
 		<Categories categories={data.categories} />
@@ -80,5 +88,20 @@
 			font-size: 0.85em;
 			color: var(--purple);
 		}
+	}
+
+	.project-link {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: var(--yellow);
+		}
+	}
+
+	.sep {
+		margin: 0 0.35em;
+		color: var(--greyLight);
 	}
 </style>

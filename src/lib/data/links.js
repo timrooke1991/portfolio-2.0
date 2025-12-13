@@ -28,14 +28,9 @@ export const socials = [
 
 export const navLinks = [
 	{
-		href: '/blog/approach-to-learning',
-		name: 'Read',
-		label: 'My approach to learning'
-	},
-	{
 		href: '/blog',
 		name: 'Blog',
-		label: 'Pensive rambles'
+		label: 'Ramble stack'
 	},
 	{
 		href: 'https://www.strava.com/athletes/12160480',
@@ -43,11 +38,11 @@ export const navLinks = [
 		name: 'Running',
 		label: 'Stalk my runs'
 	},
-	// {
-	// 	href: '/projects',
-	// 	name: 'Projects',
-	// 	label: 'Stuff that I have built'
-	// },
+	{
+		href: '/projects',
+		name: 'Projects',
+		label: 'Stuff that I have built'
+	},
 	{
 		href: '/contact',
 		name: 'Contact',

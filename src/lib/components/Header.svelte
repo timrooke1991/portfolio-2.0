@@ -9,7 +9,7 @@
 	<nav>
 		<a data-sveltekit-preload-code href="/about"><span>About</span></a>
 		<a data-sveltekit-preload-code href="/blog"><span>Blog</span></a>
-		<!-- <a data-sveltekit-preload-code href="/projects"><span>Projects</span></a> -->
+		<a data-sveltekit-preload-code href="/projects"><span>Projects</span></a>
 		<a data-sveltekit-preload-code href="/contact"><span>Contact</span></a>
 	</nav>
 </header>

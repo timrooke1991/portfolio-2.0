@@ -41,7 +41,7 @@
 		<article>
 			<div class="project">
 				<a
-					href="https://training-diary-production.up.railway.app/dashboard"
+					href="https://trainingdiary.up.railway.app/dashboard"
 					target="_blank"
 					rel="noopener noreferrer"
 				>

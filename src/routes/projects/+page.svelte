@@ -38,6 +38,32 @@
 				</a>
 			</div>
 		</article>
+		<article>
+			<div class="project">
+				<a
+					href="https://training-diary-production.up.railway.app/dashboard"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<h3>Running Diary</h3>
+					<p class="preview">
+						Sync Strava runs to a Google Sheet for a shareable training diary. Connect with Strava, pick (and
+						own) your spreadsheet data, then sync rich activity data including distance, pace, heart rate, elevation and
+						perceived effort. Chart, analyse, share to your coach or friends.
+					</p>
+					<aside class="categories">
+						<ul class="no-bullets">
+							<li>Strava</li>
+							<li>Google Sheets</li>
+						</ul>
+					</aside>
+					<p class="meta">
+						<span class="stats">Automated training log · Coach-friendly sharing</span>
+						<span class="link-text">Open App →</span>
+					</p>
+				</a>
+			</div>
+		</article>
 	</div>
 </section>
 

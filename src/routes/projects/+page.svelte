@@ -59,7 +59,7 @@
 					</aside>
 					<p class="meta">
 						<span class="stats">Automated training log · Coach-friendly sharing</span>
-						<span class="link-text">Open App →</span>
+						<span class="link-text">View Project →</span>
 					</p>
 				</a>
 			</div>

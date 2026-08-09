@@ -10,6 +10,38 @@
 
 <section class="page-container-center">
 	<h1 class="page-title title-accent">Stuff that I have built</h1>
+	<h2 class="section-title">2026</h2>
+	<div class="projects-container">
+		<article>
+			<div class="project">
+				<a
+					href="https://github.com/timrooke1991/footballbacon"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<h3>Football Bacon</h3>
+					<p class="preview">
+						Six degrees of Kevin Bacon — for footballers. Build a chain between two players through
+						overlapping club teammates, then pit your route against the shortest path found with
+						bidirectional BFS. Daily and free-play modes over Top 5 league careers (2012+), with
+						lives, hints, and shareable results.
+					</p>
+					<aside class="categories">
+						<ul class="no-bullets">
+							<li>Next.js</li>
+							<li>SQLite</li>
+							<li>Graph search</li>
+						</ul>
+					</aside>
+					<p class="meta">
+						<span class="stats">Daily puzzle · Top 5 leagues · shortest-path oracle</span>
+						<span class="link-text">View Project →</span>
+					</p>
+				</a>
+			</div>
+		</article>
+	</div>
+
 	<h2 class="section-title">2025</h2>
 	<div class="projects-container">
 		<article>

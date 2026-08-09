@@ -6,6 +6,8 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"strava:refresh": "node scripts/refresh-strava.mjs",
+		"strava:auth": "node scripts/strava-auth.mjs",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},

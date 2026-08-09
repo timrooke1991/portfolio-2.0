@@ -2,9 +2,15 @@
 	import LinkList from '$lib/components/LinkList.svelte';
 	import { navLinks, socials } from '$lib/data/links.js';
 	import StravaSeparator from '$lib/components/StravaSeparator.svelte';
+	import { page } from '$app/stores';
+	import { defaultElevation, londonElevation } from '$lib/data/running.js';
+
+	const profile = $derived(
+		$page.url.pathname.startsWith('/about') ? londonElevation : defaultElevation
+	);
 </script>
 
-<StravaSeparator />
+<StravaSeparator {profile} />
 <footer>
 	<div>
 		<h3 class="title-accent">Where to find me</h3>
@@ -16,7 +22,7 @@
 	</div>
 	<div>
 		<p>Built in Svelte</p>
-		<p>Tim Rooke, 2024</p>
+		<p>Tim Rooke, 2026</p>
 	</div>
 </footer>
 

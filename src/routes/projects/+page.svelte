@@ -10,6 +10,10 @@
 
 <section class="page-container-center">
 	<h1 class="page-title title-accent">Stuff that I have built</h1>
+	<p class="intro">
+		Side projects that follow curiosity — football graphs, manifesto hindsight, and training logs
+		that sync to a sheet your coach can actually read.
+	</p>
 	<h2 class="section-title">2026</h2>
 	<div class="projects-container">
 		<article>
@@ -49,9 +53,10 @@
 				<a href="https://politicoretro.netlify.app/" target="_blank" rel="noopener noreferrer">
 					<h3>Political Manifesto Retrospective</h3>
 					<p class="preview">
-						A comprehensive analysis of political manifestos and party platforms, evaluated through a modern lens 
-						using LLMs to see how well they've aged. Features over a century of British political manifestos 
-						from Conservative and Labour parties, plus US party platforms spanning from the mid-19th century to present day.
+						A century of UK manifestos and US platforms, scored by an LLM with the benefit of
+						hindsight — born from an old political-history debate about Harold Wilson, finished as
+						a weekend evals experiment. Conservative and Labour from the 19th century on, plus US
+						platforms back to the mid-1800s.
 					</p>
 					<aside class="categories">
 						<ul class="no-bullets">
@@ -102,6 +107,8 @@
 <style lang="scss">
 	p.intro {
 		margin-bottom: var(--halfNote);
+		line-height: 1.5;
+		color: var(--offWhite);
 	}
 
 	.section-title {

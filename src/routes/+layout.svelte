@@ -14,13 +14,28 @@
 	const initialValue = isSinglePostCheck.test($page.data.currentRoute);
 	let isSinglePost = $state(initialValue);
 	let showFooter = $state(false);
+	let bodyRouteClass = $state('route-home');
 
 	$effect(() => {
 		isSinglePost = isSinglePostCheck.test($page.data.currentRoute);
 	});
 
 	$effect(() => {
-		showFooter = $page.url.pathname !== '/';
+		const path = $page.url.pathname;
+		showFooter = path !== '/';
+		if (path === '/') {
+			bodyRouteClass = 'route-home';
+		} else if (isSinglePostCheck.test(path) || path.startsWith('/blog/')) {
+			bodyRouteClass = 'route-reading';
+		} else {
+			bodyRouteClass = 'route-place';
+		}
+	});
+
+	$effect(() => {
+		if (typeof document === 'undefined') return;
+		document.body.classList.remove('route-home', 'route-reading', 'route-place');
+		document.body.classList.add(bodyRouteClass);
 	});
 
 	let lastScrollPosition = 0;

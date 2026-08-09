@@ -1,7 +1,7 @@
 <script>
 	import { majors, majorsDone, majorsTotal } from '$lib/data/running.js';
 
-	let { compact = false } = $props();
+	let { compact = false, footer = false } = $props();
 
 	function formatDate(iso) {
 		if (!iso) return null;
@@ -13,8 +13,12 @@
 	}
 </script>
 
-<section class="majors" class:compact aria-label="World Marathon Majors progress">
-	<header class="majors-header">
+<section
+	class="majors"
+	class:compact
+	class:footer
+	aria-label="World Marathon Majors progress"
+>	<header class="majors-header">
 		<p class="eyebrow">World Marathon Majors</p>
 		<p class="progress">
 			<span class="count">{majorsDone}</span>
@@ -72,6 +76,45 @@
 
 	.majors.compact {
 		margin: var(--halfNote) 0 0;
+	}
+
+	.majors.footer {
+		margin: 0;
+		max-width: none;
+
+		.majors-header {
+			margin-bottom: 0.85rem;
+			padding-bottom: 0.55rem;
+		}
+
+		.eyebrow {
+			font-size: 0.75rem;
+		}
+
+		.progress {
+			font-size: 0.8rem;
+		}
+
+		.majors-list {
+			grid-template-columns: repeat(6, minmax(0, 1fr));
+			gap: 0.5rem 1rem;
+
+			@media (max-width: 900px) {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
+
+			@media (max-width: 520px) {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+		}
+
+		.name {
+			font-size: 0.9rem;
+		}
+
+		.detail.subtle {
+			display: none;
+		}
 	}
 
 	.majors-header {

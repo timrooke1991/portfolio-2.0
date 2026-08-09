@@ -1,5 +1,5 @@
 [build]
-	command = "npm run strava:refresh && npm run build"
+	command = "npm run stats:refresh && npm run build"
 	publish = "build"
 
 # Set STRAVA_CLIENT_ID, STRAVA_CLIENT_SECRET, STRAVA_REFRESH_TOKEN in Netlify env.

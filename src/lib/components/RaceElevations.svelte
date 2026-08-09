@@ -6,7 +6,7 @@
 		splitsToBars
 	} from '$lib/data/strava.js';
 
-	let { races = [] } = $props();
+	let { races = [], eyebrow = 'Last 3 races' } = $props();
 
 	const profiles = $derived(
 		(races ?? []).map((race) => ({
@@ -51,7 +51,7 @@
 {#if profiles.length}
 	<div class="races" bind:this={containerRef} class:visible={isVisible}>
 		<header class="races-header">
-			<p class="eyebrow">Last 3 races</p>
+			<p class="eyebrow">{eyebrow}</p>
 		</header>
 
 		<div class="race-grid">

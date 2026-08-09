@@ -2,5 +2,15 @@
 	command = "npm run stats:refresh && npm run build"
 	publish = "build"
 
-# Set STRAVA_CLIENT_ID, STRAVA_CLIENT_SECRET, STRAVA_REFRESH_TOKEN in Netlify env.
-# Schedule a daily build (Build hooks + cron, or Netlify Scheduled Builds) to keep stats fresh.
+[functions]
+	directory = "netlify/functions"
+
+# Daily rebuild so Strava + GitHub JSON stay fresh (06:00 UTC).
+# Requires NETLIFY_BUILD_HOOK in site env (Build hooks → Add hook).
+[functions."trigger-stats-refresh"]
+	schedule = "0 6 * * *"
+
+# Also set on Netlify:
+#   STRAVA_CLIENT_ID, STRAVA_CLIENT_SECRET, STRAVA_REFRESH_TOKEN
+# Optional: STRAVA_YEAR_GOAL_MI, STRAVA_YEAR_LABEL, STRAVA_FIRST_YEAR,
+#           GITHUB_USERNAME, GITHUB_FIRST_YEAR

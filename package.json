@@ -15,7 +15,6 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.1",
 		"@sveltejs/adapter-netlify": "^4.1.0",
 		"@sveltejs/kit": "^1.7.2",
 		"autoprefixer": "^10.4.17",
@@ -31,6 +30,9 @@
 		"vite": "^4.0.0"
 	},
 	"type": "module",
+	"engines": {
+		"node": ">=26"
+	},
 	"dependencies": {
 		"just-throttle": "^4.2.0",
 		"rehype-autolink-headings": "^7.1.0",

@@ -1,4 +1,5 @@
 <script>
+	import { projectYears } from '$lib/data/projects.js';
 </script>
 
 <svelte:head>
@@ -14,121 +15,46 @@
 		Side projects that follow curiosity — marathon training forensics, football graphs, manifesto
 		hindsight, and training logs that sync to a sheet your coach can actually read.
 	</p>
-	<h2 class="section-title">2026</h2>
-	<div class="projects-container">
-		<article>
-			<div class="project">
-				<a
-					href="https://github.com/timrooke1991/raceblocks"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<h3>Raceblocks</h3>
-					<p class="preview">
-						Ingest Strava race-tagged marathons, set a 10–15 week build window, and get a structured
-						read on volume, intensity, taper, load dynamics, and conversion vs projected fitness —
-						then compare builds week-by-week (London vs Amsterdam, and so on).
-					</p>
-					<aside class="categories">
-						<ul class="no-bullets">
-							<li>Next.js</li>
-							<li>Strava</li>
-							<li>SQLite</li>
-						</ul>
-					</aside>
-					<p class="meta">
-						<span class="stats">Training block analysis · compare builds · GitHub</span>
-						<span class="link-text">View on GitHub →</span>
-					</p>
-				</a>
-			</div>
-		</article>
-		<article>
-			<div class="project">
-				<a
-					href="https://footballbacon.onrender.com/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<h3>Football Bacon</h3>
-					<p class="preview">
-						Six degrees of Kevin Bacon — for footballers. Build a chain between two players through
-						overlapping club teammates, then pit your route against the shortest path found with
-						bidirectional BFS. Daily and free-play modes over Top 5 league careers (2012+), with
-						lives, hints, and shareable results.
-					</p>
-					<aside class="categories">
-						<ul class="no-bullets">
-							<li>Next.js</li>
-							<li>SQLite</li>
-							<li>Graph search</li>
-						</ul>
-					</aside>
-					<p class="meta">
-						<span class="stats">Daily puzzle · Top 5 leagues · shortest-path oracle</span>
-						<span class="link-text">View Project →</span>
-					</p>
-				</a>
-			</div>
-		</article>
-	</div>
 
-	<h2 class="section-title">2025</h2>
-	<div class="projects-container">
-		<article>
-			<div class="project">
-				<a href="https://politicoretro.netlify.app/" target="_blank" rel="noopener noreferrer">
-					<h3>Political Manifesto Retrospective</h3>
-					<p class="preview">
-						A century of UK manifestos and US platforms, scored by an LLM with the benefit of
-						hindsight — born from an old political-history debate about Harold Wilson, finished as
-						a weekend evals experiment. Conservative and Labour from the 19th century on, plus US
-						platforms back to the mid-1800s.
-					</p>
-					<aside class="categories">
-						<ul class="no-bullets">
-							<li>Python</li>
-							<li>OpenAI</li>
-							<li>LLM-as-a-Judge</li>
-						</ul>
-					</aside>
-					<p class="meta">
-						<span class="stats">🇬🇧 66 Manifestos · 🇺🇸 91 Platforms</span>
-						<span class="link-text">View Project →</span>
-					</p>
-				</a>
-				<a href="/blog/with-the-benefit-of-hindsight" class="blog-link">
-					Read the blog post
-				</a>
-			</div>
-		</article>
-		<article>
-			<div class="project">
-				<a
-					href="https://trainingdiary.up.railway.app/dashboard"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<h3>Running Diary</h3>
-					<p class="preview">
-						Sync Strava runs to a Google Sheet for a shareable training diary. Connect with Strava, pick (and
-						own) your spreadsheet data, then sync rich activity data including distance, pace, heart rate, elevation and
-						perceived effort. Chart, analyse, share to your coach or friends.
-					</p>
-					<aside class="categories">
-						<ul class="no-bullets">
-							<li>Strava</li>
-							<li>Google Sheets</li>
-						</ul>
-					</aside>
-					<p class="meta">
-						<span class="stats">Automated training log · Coach-friendly sharing</span>
-						<span class="link-text">View Project →</span>
-					</p>
-				</a>
-			</div>
-		</article>
-	</div>
+	{#each projectYears as group}
+		<h2 class="section-title">{group.year}</h2>
+		<div class="projects-container">
+			{#each group.projects as project}
+				<article>
+					<div class="project">
+						<a href={project.href} target="_blank" rel="noopener noreferrer">
+							<h3>{project.name}</h3>
+							<figure class="project-shot">
+								<img
+									src={project.image}
+									alt={project.imageAlt}
+									width="1600"
+									height="1200"
+									loading="lazy"
+									decoding="async"
+								/>
+							</figure>
+							<p class="preview">{project.preview}</p>
+							<aside class="categories">
+								<ul class="no-bullets">
+									{#each project.tags as tag}
+										<li>{tag}</li>
+									{/each}
+								</ul>
+							</aside>
+							<p class="meta">
+								<span class="stats">{project.stats}</span>
+								<span class="link-text">{project.cta}</span>
+							</p>
+						</a>
+						{#if project.blogHref}
+							<a href={project.blogHref} class="blog-link">{project.blogLabel}</a>
+						{/if}
+					</div>
+				</article>
+			{/each}
+		</div>
+	{/each}
 </section>
 
 <style lang="scss">
@@ -154,6 +80,7 @@
 	}
 
 	article {
+		position: relative;
 		transition: background-color 0.3s ease-in-out;
 		transition-delay: 0.12s;
 	}
@@ -195,6 +122,39 @@
 		color: var(--ink);
 		font-size: 1.2em;
 		font-weight: 400;
+	}
+
+	.project-shot {
+		margin: 0.85rem 0 1rem;
+		padding: 0;
+		border: 1px solid color-mix(in srgb, var(--purple) 42%, transparent);
+		background: color-mix(in srgb, var(--grey) 88%, var(--purple));
+		overflow: hidden;
+		line-height: 0;
+		aspect-ratio: 4 / 3;
+
+		img {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: 4 / 3;
+			object-fit: cover;
+			object-position: top center;
+			display: block;
+			/* Light desat so shots sit in the topo site — colour returns on hover */
+			filter: grayscale(0.12) contrast(1.05) brightness(0.98);
+			transition:
+				filter 0.35s ease,
+				transform 0.45s ease;
+		}
+	}
+
+	.project:hover .project-shot {
+		border-color: color-mix(in srgb, var(--purple) 72%, transparent);
+
+		img {
+			filter: grayscale(0) contrast(1.06) brightness(1);
+			transform: scale(1.012);
+		}
 	}
 
 	p.preview {
@@ -257,4 +217,5 @@
 			transform: translateX(4px);
 		}
 	}
+
 </style>

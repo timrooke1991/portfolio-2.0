@@ -1,6 +1,12 @@
 /** Featured side projects for the home twin column. */
 export const recentProjects = [
 	{
+		name: 'Raceblocks',
+		year: '2026',
+		href: 'https://github.com/timrooke1991/raceblocks',
+		meta: 'Strava · marathon block analysis'
+	},
+	{
 		name: 'Football Bacon',
 		year: '2026',
 		href: 'https://footballbacon.onrender.com/',

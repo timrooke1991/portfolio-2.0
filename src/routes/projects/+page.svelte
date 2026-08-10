@@ -11,11 +11,38 @@
 <section class="page-container-center">
 	<h1 class="page-title title-accent">Stuff that I have built</h1>
 	<p class="intro">
-		Side projects that follow curiosity — football graphs, manifesto hindsight, and training logs
-		that sync to a sheet your coach can actually read.
+		Side projects that follow curiosity — marathon training forensics, football graphs, manifesto
+		hindsight, and training logs that sync to a sheet your coach can actually read.
 	</p>
 	<h2 class="section-title">2026</h2>
 	<div class="projects-container">
+		<article>
+			<div class="project">
+				<a
+					href="https://github.com/timrooke1991/raceblocks"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<h3>Raceblocks</h3>
+					<p class="preview">
+						Ingest Strava race-tagged marathons, set a 10–15 week build window, and get a structured
+						read on volume, intensity, taper, load dynamics, and conversion vs projected fitness —
+						then compare builds week-by-week (London vs Amsterdam, and so on).
+					</p>
+					<aside class="categories">
+						<ul class="no-bullets">
+							<li>Next.js</li>
+							<li>Strava</li>
+							<li>SQLite</li>
+						</ul>
+					</aside>
+					<p class="meta">
+						<span class="stats">Training block analysis · compare builds · GitHub</span>
+						<span class="link-text">View on GitHub →</span>
+					</p>
+				</a>
+			</div>
+		</article>
 		<article>
 			<div class="project">
 				<a

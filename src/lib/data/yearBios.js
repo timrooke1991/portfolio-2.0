@@ -35,6 +35,11 @@ export const yearBios = {
 		stack: ['TypeScript', 'Vue', 'Python', 'LLM', 'MCP'],
 		projects: [
 			{
+				name: 'Raceblocks',
+				href: 'https://github.com/timrooke1991/raceblocks',
+				meta: 'Side · Strava block analysis'
+			},
+			{
 				name: 'Football Bacon',
 				href: 'https://footballbacon.onrender.com/',
 				meta: 'Side · graph search'
